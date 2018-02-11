@@ -12,6 +12,13 @@ public class Detection : MonoBehaviour {
 	[Range(1f, 10f)]
 	public float rotationDamping = 8f;
 
+	Dead deadRef;
+
+	void Awake() {
+
+		deadRef = GetComponent<Dead> ();		
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,13 +31,16 @@ public class Detection : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision) {
 
-		// iff caught
-		if (collision.gameObject == target) {
+		if (!deadRef.isDead) {
 
-			ProgressController pc = GameObject.Find ("GameManager")
+			// iff caught
+			if (collision.gameObject == target) {
+
+				ProgressController pc = GameObject.Find ("GameManager")
 				.GetComponent<ProgressController> ();
 
-			pc.doLose();
+				pc.doLose ();
+			}
 		}
 	}
 
@@ -56,9 +66,13 @@ public class Detection : MonoBehaviour {
 
 	public bool DoCheck (GameObject gameObject) {
 
-		if (gameObject == target) {
-			DoChase ();
+		if (!deadRef.isDead) {
+			
+			if (gameObject == target) {
+				DoChase ();
+			}
+			return gameObject == target;
 		}
-		return gameObject == target;
+		return false;
 	}
 }
