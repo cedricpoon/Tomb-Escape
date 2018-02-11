@@ -11,7 +11,6 @@ public class Dead : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		suicide ();
 	}
 	
 	// Update is called once per frame
