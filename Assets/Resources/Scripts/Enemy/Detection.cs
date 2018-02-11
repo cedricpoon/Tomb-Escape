@@ -30,7 +30,7 @@ public class Detection : MonoBehaviour {
 			ProgressController pc = GameObject.Find ("GameManager")
 				.GetComponent<ProgressController> ();
 
-			pc.doEndGame();
+			pc.doLose();
 		}
 	}
 

@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4320717914246194}
+  - component: {fileID: 114437989848250190}
   - component: {fileID: 114506738445815494}
   - component: {fileID: 114650380984660692}
   - component: {fileID: 33576260997652440}
@@ -46,7 +47,7 @@ GameObject:
   - component: {fileID: 64914037579064688}
   m_Layer: 11
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,7 +301,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966527
+    m_Bits: 4294964479
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -308,6 +309,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114437989848250190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234410202749704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60343ed8c9a72402e82ee6185a166e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallFactor: {x: -30, y: 0, z: 0}
 --- !u!114 &114506738445815494
 MonoBehaviour:
   m_ObjectHideFlags: 1
