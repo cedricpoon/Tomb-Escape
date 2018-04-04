@@ -36,10 +36,12 @@ public class Detection : MonoBehaviour {
 			// iff caught
 			if (collision.gameObject == target) {
 
-				ProgressController pc = GameObject.Find ("GameManager")
-				.GetComponent<ProgressController> ();
+				Debug.LogWarning ("Detection[Todo]: To trigger player harm / dead event");
 
-				pc.doLose ();
+				// To-do: To trigger player harm / dead event
+				/* ProgressController pc = GameObject.Find ("GameManager")
+				.GetComponent<ProgressController> ();
+				pc.doLose (); */
 			}
 		}
 	}
