@@ -301,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887860420}
   - component: {fileID: 887860421}
+  - component: {fileID: 887860422}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -332,12 +333,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd813e9be99b462a92d74b522706fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderSize: 50
+  renderSize: 7
+  renderEvery: 5
   roomSize: 20
+  roomRef: {fileID: 887860422}
   hostileRooms:
   - {fileID: 1122403200244132, guid: ac5c328a8c32b466884c24927c55f2f6, type: 2}
+  eventProgress: 0
   eventRooms:
   - {fileID: 1665828765428942, guid: b49758ce0758244d59e553f0c8af1bce, type: 2}
+  - {fileID: 1665828765428942, guid: b49758ce0758244d59e553f0c8af1bce, type: 2}
+  - {fileID: 1665828765428942, guid: b49758ce0758244d59e553f0c8af1bce, type: 2}
+--- !u!114 &887860422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887860419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7490d4ca6824f43b4c7c45c4ab8342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Room: {fileID: 0}
+  Traveled: 0
+  Player: {fileID: 1512259632}
 --- !u!1 &1512259632
 GameObject:
   m_ObjectHideFlags: 0
