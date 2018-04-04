@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd813e9be99b462a92d74b522706fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderSize: 10
+  renderSize: 50
   roomSize: 20
   hostileRooms:
   - {fileID: 1122403200244132, guid: ac5c328a8c32b466884c24927c55f2f6, type: 2}

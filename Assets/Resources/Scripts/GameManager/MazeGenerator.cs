@@ -7,12 +7,18 @@ public class MazeGenerator : MonoBehaviour {
 	[Range(1, 50)]
 	public int renderSize;
 
+	[Range(1, 50)]
+	public int renderEvery;
+
 	public float roomSize = 20;
+
+	public CurrentRoomLocator roomRef;
 
 	[Header("Out-of-order")]
 	public GameObject[] hostileRooms;
 
 	[Header("In-order with Storyline")]
+	public int eventProgress;
 	public GameObject[] eventRooms;
 
 	enum Direction { E, S, W, N };
@@ -20,14 +26,14 @@ public class MazeGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Render renderSize maze first
-		RenderNext(SpawnRoomWithLoc(eventRooms[0], Vector3.zero));
+		StartCoroutine("RenderNext", SpawnRoomWithLoc(eventRooms[eventProgress++], Vector3.zero));
 	}
 
-	void RenderNext(GameObject orgin) {
+	IEnumerator RenderNext(GameObject orgin) {
 		Stack<GameObject> dfsStack = new Stack<GameObject> ();
 		dfsStack.Push (orgin);
 
-		for (int i = 0; i < renderSize; i++) {
+		for (int i = 0; i < renderSize && dfsStack.Count > 0; i++) {
 			int dirSize = GetNoOfDirections ();
 			int _dir = Random.Range(0, dirSize);
 
@@ -38,9 +44,14 @@ public class MazeGenerator : MonoBehaviour {
 
 				if (CheckNextAreaValid (dfsStack.Peek(), d)) {
 					// Actual spawn of new room
+					GameObject nextRoomProto = hostileRooms [Random.Range (0, hostileRooms.Length)];
+					// if start of rendering and story proceeding
+					if (eventProgress < eventRooms.Length && i == renderSize - 1) {
+						nextRoomProto = eventRooms [eventProgress++];
+					}
 					GameObject room = SpawnRoomWithLoc (
-						                  hostileRooms [Random.Range (0, hostileRooms.Length)],
-						                  dfsStack.Peek ().transform.position + ResolveDirection (d)
+	  									nextRoomProto,
+				                  		dfsStack.Peek ().transform.position + ResolveDirection (d)
 					                  );
 					// Active "from" room door
 					ActivateDoor (dfsStack.Peek (), d);
@@ -73,6 +84,8 @@ public class MazeGenerator : MonoBehaviour {
 				}
 			}
 		}
+
+		yield return null;
 	}
 
 	int GetNoOfDirections() {
@@ -154,6 +167,10 @@ public class MazeGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (roomRef.Traveled != 0 && roomRef.Traveled % renderEvery == 0) {
+			StartCoroutine ("RenderNext", roomRef.Room);
+			// Reset traveled counter
+			roomRef.Traveled = 0;
+		}
 	}
 }
