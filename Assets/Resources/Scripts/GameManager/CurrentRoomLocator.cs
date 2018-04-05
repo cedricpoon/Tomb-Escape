@@ -6,6 +6,8 @@ public class CurrentRoomLocator : MonoBehaviour {
 
 	public GameObject Room;
 
+	public LayerMask FloorLayerMask;
+
 	public int Traveled;
 
 	private GameObject PrevRoom;
@@ -20,7 +22,7 @@ public class CurrentRoomLocator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		PrevRoom = Room;
-		Collider[] cldrs = Physics.OverlapSphere (Player.transform.position, 1f);
+		Collider[] cldrs = Physics.OverlapSphere (Player.transform.position, 1f, FloorLayerMask);
 		// Immediate colliding parent should be room
 		Room = cldrs [0].transform.parent.gameObject;
 
