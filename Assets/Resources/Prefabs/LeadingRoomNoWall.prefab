@@ -109,6 +109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4115894094336746}
+  - component: {fileID: 114945660912424668}
   m_Layer: 0
   m_Name: LeadingRoomNoWall
   m_TagString: Untagged
@@ -576,3 +577,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Enemy
   hasEnemy: 0
+--- !u!114 &114945660912424668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665828765428942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df709efbc53d4632ae2a52fb4427f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visited: 0

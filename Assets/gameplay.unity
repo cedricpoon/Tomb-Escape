@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderSize: 7
   renderEvery: 5
+  renderIfAvailable: 2
   roomSize: 20
   roomRef: {fileID: 887860422}
   hostileRooms:

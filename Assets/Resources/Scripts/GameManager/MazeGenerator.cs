@@ -10,6 +10,12 @@ public class MazeGenerator : MonoBehaviour {
 	[Range(1, 50)]
 	public int renderEvery;
 
+	[Header("Check Surrounding Emptyness")]
+	[Range(1, 4)]
+	public int renderIfAvailable;
+
+	[Space(10)]
+
 	public float roomSize = 20;
 
 	public CurrentRoomLocator roomRef;
@@ -167,10 +173,20 @@ public class MazeGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (roomRef.Traveled != 0 && roomRef.Traveled % renderEvery == 0) {
-			StartCoroutine ("RenderNext", roomRef.Room);
-			// Reset traveled counter
-			roomRef.Traveled = 0;
+		if (roomRef.Traveled != 0 && roomRef.Traveled >= renderEvery) {
+			int noOfValidArea = 0;
+
+			for (int i = 0; i < GetNoOfDirections (); i++) {
+				if (CheckNextAreaValid (roomRef.Room, ResolveDirection (i))) {
+					noOfValidArea++;
+				}
+			}
+
+			if (noOfValidArea >= renderIfAvailable) {
+				StartCoroutine ("RenderNext", roomRef.Room);
+				// Reset traveled counter
+				roomRef.Traveled = 0;
+			}
 		}
 	}
 }

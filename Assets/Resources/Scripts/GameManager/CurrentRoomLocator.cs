@@ -24,7 +24,10 @@ public class CurrentRoomLocator : MonoBehaviour {
 		// Immediate colliding parent should be room
 		Room = cldrs [0].transform.parent.gameObject;
 
-		if (PrevRoom != null && PrevRoom != Room)
+		if (PrevRoom != null && PrevRoom != Room && !Room.GetComponent<VisitStatus> ().IsVisited) {
 			Traveled++;
+			// Checkout room
+			Room.GetComponent<VisitStatus>().Checkout();
+		}
 	}
 }
