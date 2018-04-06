@@ -1,5 +1,5 @@
 # Tomb Escape
-COMP3329 Computer game design and programming Group 7
+HKU COMP3329 Computer game design and programming Group 7 **Unity3D** Game Project
 ## Dashboard
 The dashboard that includes all features and to-do list of Tomb Escape.
 ### Portal
