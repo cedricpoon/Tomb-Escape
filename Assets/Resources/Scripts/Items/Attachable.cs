@@ -6,50 +6,87 @@ public class Attachable : MonoBehaviour {
 
 	public Handholding hand;
 	public string playerTag;
+	public Material highlight;
 
 	public bool IsHeld { get { return held; } }
 
 	private GameObject player;
 	private bool held;
 
-	void OnCollisionStay(Collision collision)
-	{
-		// check if hand entered
-		if (collision.gameObject == player && !held && Input.GetButtonDown("Fire1")) {
-			held = true;
+	private List<Material> materialsRef;
+	private Renderer _renderer;
 
-			// reset rotation
-			transform.rotation = Quaternion.Euler (Vector3.zero);
-			GetComponent<Rigidbody> ().useGravity = false;
-			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
-			GetComponent<Collider> ().enabled = false;
-
-			// pickup
-			transform.SetParent(player.transform);
-			transform.position = hand.gameObject.transform.position;
-
-			hand.attachedItem = this;
+	void AddMaterial(Material m) {
+		if (!materialsRef.Contains (m)) {
+			materialsRef.Add (m);
+			_renderer.materials = materialsRef.ToArray ();
 		}
 	}
 
-	public void Unattach () {
-		if (held) {
-			// reset rigidbody
-			GetComponent<Rigidbody> ().useGravity = true;
-			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
-			GetComponent<Collider> ().enabled = true;
-
-			// put down
-			transform.SetParent (null);
-			transform.position = hand.gameObject.transform.position + Vector3.back;
-			transform.Rotate (Vector3.one * 10);
-
-			held = false;
+	void RemoveMaterial(Material m) {
+		if (materialsRef.Contains (m)) {
+			materialsRef.Remove (m);
+			_renderer.materials = materialsRef.ToArray ();
 		}
+	}
+
+	public virtual void OnCollisionStay(Collision collision)
+	{
+		// selectable
+		if (collision.gameObject == player && !held) {
+			AddMaterial (highlight);
+		}
+
+		// check if hand entered
+		if (collision.gameObject == player && !held && Input.GetButtonDown("Fire1")) {
+			RemoveMaterial (highlight);
+			Attach ();
+		}
+	}
+
+	public virtual void OnCollisionExit(Collision collision)
+	{
+		if (collision.gameObject == player) {
+			RemoveMaterial (highlight);
+		}
+	}
+
+	public virtual void Attach () {
+		held = true;
+
+		// reset rotation
+		transform.rotation = Quaternion.Euler (Vector3.zero);
+		GetComponent<Rigidbody> ().useGravity = false;
+		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+		GetComponent<Collider> ().enabled = false;
+
+		// pickup
+		transform.SetParent(player.transform);
+		transform.position = hand.gameObject.transform.position;
+
+		hand.attachedItem = this;
+	}
+
+	public virtual void Unattach () {
+		// reset rigidbody
+		GetComponent<Rigidbody> ().useGravity = true;
+		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+		GetComponent<Collider> ().enabled = true;
+
+		// put down
+		transform.SetParent (null);
+		transform.position = hand.gameObject.transform.position + Vector3.back;
+		transform.Rotate (Vector3.one * 10);
+
+		held = false;
 	}
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
+		// get renderer reference
+		_renderer = GetComponentInChildren<Renderer> ();
+		materialsRef = new List<Material>(_renderer.materials);
+
 		if (hand == null)
 			hand = GameObject.FindGameObjectWithTag (playerTag).GetComponentsInChildren<Handholding> ()[0];
 		// ref of player
@@ -57,7 +94,7 @@ public class Attachable : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
 		
 	}
 }

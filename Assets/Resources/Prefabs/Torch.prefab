@@ -9,10 +9,9 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   - component: {fileID: 11400000}
-  - component: {fileID: 114510470505123662}
-  - component: {fileID: 114832658940151114}
   - component: {fileID: 54091796948972506}
   - component: {fileID: 65511656615524558}
+  - component: {fileID: 114912347944923062}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -31,7 +30,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   m_Layer: 0
-  m_Name: torche
+  m_Name: torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13915,7 +13914,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.5, z: 0.05}
   m_Center: {x: 0, y: 0.25, z: 0}
---- !u!114 &114510470505123662
+--- !u!114 &114912347944923062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -13923,21 +13922,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b8a52e58b8d4c0cba04a6502f493c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attach: {fileID: 114832658940151114}
-  LifeTimeInSeconds: 15
---- !u!114 &114832658940151114
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93fe516a53149444d8c63cd0b5c43a7e, type: 3}
+  m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
-  playerTag: 
+  playerTag: Player
+  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  LifeTimeInSeconds: 20
