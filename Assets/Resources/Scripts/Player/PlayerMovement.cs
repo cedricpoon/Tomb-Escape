@@ -25,15 +25,19 @@ public class PlayerMovement : MonoBehaviour {
 
 		var z = Input.GetAxis("Vertical") * Time.deltaTime * s;
 	
+		Debug.Log (Input.GetAxis("Vertical"));
 
-		if (Input.GetKey("w")) {
+		// Animation cycle
+		if (Input.GetAxis("Vertical") > 0) 
+		{
 			_ani.SetInteger ("animPara", 1);
-		} else if (Input.GetKey("s")) {
+		}
+		else if (Input.GetAxis("Vertical") < 0) 
+		{
 			_ani.SetInteger ("animPara", 2);
-		} else if (Input.GetKeyUp("s")){
-			_ani.SetInteger ("animPara", 3);
-
-		}else {
+		}
+		else 
+		{
 			_ani.SetInteger ("animPara", 0);
 		}
 			
