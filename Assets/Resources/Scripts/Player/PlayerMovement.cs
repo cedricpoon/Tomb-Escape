@@ -24,10 +24,19 @@ public class PlayerMovement : MonoBehaviour {
 		float s = (Input.GetAxis("Sprint") != 0) ? sprint : speed;
 
 		var z = Input.GetAxis("Vertical") * Time.deltaTime * s;
+	
 
-		if (z != 0) {
+		if (Input.GetKey("w")) {
 			_ani.SetInteger ("animPara", 1);
+		} else if (Input.GetKey("s")) {
+			_ani.SetInteger ("animPara", 2);
+		} else if (Input.GetKeyUp("s")){
+			_ani.SetInteger ("animPara", 3);
+
+		}else {
+			_ani.SetInteger ("animPara", 0);
 		}
+			
 
 		transform.Translate(0, 0, z);
 	}
