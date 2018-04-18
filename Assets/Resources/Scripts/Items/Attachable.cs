@@ -54,14 +54,18 @@ public class Attachable : MonoBehaviour {
 	public virtual void Attach () {
 		held = true;
 
-		// reset rotation
-		transform.rotation = Quaternion.Euler (Vector3.zero);
+		// reset components
 		GetComponent<Rigidbody> ().useGravity = false;
 		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 		GetComponent<Collider> ().enabled = false;
 
 		// pickup
-		transform.SetParent(player.transform);
+		transform.parent = hand.transform;
+		transform.eulerAngles = new Vector3 (
+			hand.transform.rotation.eulerAngles.x + 45,
+			hand.transform.rotation.eulerAngles.y + 45,
+			hand.transform.rotation.eulerAngles.z
+		);
 		transform.position = hand.gameObject.transform.position;
 
 		hand.attachedItem = this;
@@ -75,8 +79,7 @@ public class Attachable : MonoBehaviour {
 
 		// put down
 		transform.SetParent (null);
-		transform.position = hand.gameObject.transform.position + Vector3.back;
-		transform.Rotate (Vector3.one * 10);
+		transform.position = hand.gameObject.transform.position;
 
 		held = false;
 	}
@@ -87,10 +90,11 @@ public class Attachable : MonoBehaviour {
 		_renderer = GetComponentInChildren<Renderer> ();
 		materialsRef = new List<Material>(_renderer.materials);
 
-		if (hand == null)
-			hand = GameObject.FindGameObjectWithTag (playerTag).GetComponentsInChildren<Handholding> ()[0];
+		if (hand == null) {
+			hand = GameObject.FindGameObjectWithTag (playerTag).GetComponentsInChildren<Handholding> () [0];
+		}
 		// ref of player
-		player = hand.gameObject.transform.parent.gameObject;
+		player = hand.gameObject.transform.root.gameObject;
 	}
 	
 	// Update is called once per frame

@@ -310,7 +310,7 @@ MonoBehaviour:
   BaseFlame: {fileID: 100008}
   Etincelles: {fileID: 100004}
   Fumee: {fileID: 100010}
-  MaxLightIntensity: 1
+  MaxLightIntensity: 2
   IntensityLight: 0.3
 --- !u!198 &19800000
 ParticleSystem:

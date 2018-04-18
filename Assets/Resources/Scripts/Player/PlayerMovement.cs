@@ -10,9 +10,12 @@ public class PlayerMovement : MonoBehaviour {
 	[Range(1f, 10f)]
 	public float sprint = 8f;
 
+	Animator _ani;
+
 	// Use this for initialization
 	void Start () {
 		
+		_ani = gameObject.GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -20,9 +23,30 @@ public class PlayerMovement : MonoBehaviour {
 
 		float s = (Input.GetAxis("Sprint") != 0) ? sprint : speed;
 
-		var x = Input.GetAxis("Horizontal") * Time.deltaTime * s;
 		var z = Input.GetAxis("Vertical") * Time.deltaTime * s;
 
-		transform.Translate(x, 0, z);
+		if (z != 0) {
+			_ani.SetInteger ("animPara", 1);
+		}
+
+		transform.Translate(0, 0, z);
+	}
+
+	void FixedUpdate() {
+
+		Plane playerPlane = new Plane(Vector3.up, transform.position);
+
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+
+		float hitdist = 0.0f;
+
+		if (playerPlane.Raycast (ray, out hitdist)) 
+		{
+			Vector3 targetPoint = ray.GetPoint(hitdist);
+
+			Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+		}
 	}
 }

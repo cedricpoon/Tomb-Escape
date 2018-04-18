@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Torch : Attachable {
 
-	private Light light;
+	private Light _light;
 
 	[Range(5, 30)]
 	[Header("Proportional to Light Range")]
@@ -15,7 +15,7 @@ public class Torch : Attachable {
 	IEnumerator CountDown () {
 		while (LifeTimeInSeconds > 0) {
 			if (base.IsHeld)
-				light.range = --LifeTimeInSeconds;
+				_light.range = --LifeTimeInSeconds;
 			// wait for one second
 			yield return new WaitForSeconds (1f);
 		}
@@ -29,7 +29,7 @@ public class Torch : Attachable {
 		if (!startedCountDown) {
 			// first time pickup
 			startedCountDown = true;
-			light.range = LifeTimeInSeconds;
+			_light.range = LifeTimeInSeconds;
 			GetComponent<Torchelight> ().IntensityLight = GetComponent<Torchelight> ().MaxLightIntensity;
 
 			StartCoroutine("CountDown");
@@ -54,7 +54,7 @@ public class Torch : Attachable {
 	public override void Start ()
 	{
 		base.Start ();
-		light = GetComponentInChildren<Light> ();
+		_light = GetComponentInChildren<Light> ();
 	}
 
 	public override void Update ()
