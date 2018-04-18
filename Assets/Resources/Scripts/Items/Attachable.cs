@@ -11,7 +11,7 @@ public class Attachable : MonoBehaviour {
 	public bool IsHeld { get { return held; } }
 
 	private GameObject player;
-	private bool held;
+	private bool held, corrupted;
 
 	private List<Material> materialsRef;
 	private Renderer _renderer;
@@ -30,7 +30,7 @@ public class Attachable : MonoBehaviour {
 		}
 	}
 
-	public virtual void OnCollisionStay(Collision collision)
+	protected virtual void OnCollisionStay(Collision collision)
 	{
 		// selectable
 		if (collision.gameObject == player && !held) {
@@ -44,7 +44,7 @@ public class Attachable : MonoBehaviour {
 		}
 	}
 
-	public virtual void OnCollisionExit(Collision collision)
+	protected virtual void OnCollisionExit(Collision collision)
 	{
 		if (collision.gameObject == player) {
 			RemoveMaterial (highlight);
@@ -71,6 +71,10 @@ public class Attachable : MonoBehaviour {
 		hand.attachedItem = this;
 	}
 
+	public void Corrupt () {
+		corrupted = true;
+	}
+
 	public virtual void Unattach () {
 		// reset rigidbody
 		GetComponent<Rigidbody> ().useGravity = true;
@@ -82,10 +86,13 @@ public class Attachable : MonoBehaviour {
 		transform.position = hand.gameObject.transform.position;
 
 		held = false;
+
+		if (corrupted)
+			Destroy (this);
 	}
 
 	// Use this for initialization
-	public virtual void Start () {
+	protected virtual void Start () {
 		// get renderer reference
 		_renderer = GetComponentInChildren<Renderer> ();
 		materialsRef = new List<Material>(_renderer.materials);
@@ -98,7 +105,7 @@ public class Attachable : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public virtual void Update () {
+	protected virtual void Update () {
 		
 	}
 }

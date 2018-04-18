@@ -24,8 +24,6 @@ public class PlayerMovement : MonoBehaviour {
 		float s = (Input.GetAxis("Sprint") != 0) ? sprint : speed;
 
 		var z = Input.GetAxis("Vertical") * Time.deltaTime * s;
-	
-		Debug.Log (Input.GetAxis("Vertical"));
 
 		// Animation cycle
 		if (Input.GetAxis("Vertical") > 0) 

@@ -20,6 +20,7 @@ public class Torch : Attachable {
 			yield return new WaitForSeconds (1f);
 		}
 		GetComponent<Torchelight> ().IntensityLight = 0;
+		base.Corrupt ();
 	}
 
 	public override void Attach ()
@@ -41,23 +42,23 @@ public class Torch : Attachable {
 		base.Unattach ();
 	}
 
-	public override void OnCollisionStay (Collision collision)
+	protected override void OnCollisionStay (Collision collision)
 	{
 		base.OnCollisionStay (collision);
 	}
 
-	public override void OnCollisionExit (Collision collision)
+	protected override void OnCollisionExit (Collision collision)
 	{
 		base.OnCollisionExit (collision);
 	}
 
-	public override void Start ()
+	protected override void Start ()
 	{
 		base.Start ();
 		_light = GetComponentInChildren<Light> ();
 	}
 
-	public override void Update ()
+	protected override void Update ()
 	{
 		base.Update ();
 	}
