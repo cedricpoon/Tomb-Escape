@@ -6,9 +6,7 @@ public class Torch : Attachable {
 
 	private Light _light;
 
-	[Range(5, 30)]
-	[Header("Proportional to Light Range")]
-	public int LifeTimeInSeconds = 5;
+	int LifeTimeInSeconds; /* GlobalStored */
 
 	private bool startedCountDown;
 
@@ -42,24 +40,18 @@ public class Torch : Attachable {
 		base.Unattach ();
 	}
 
-	protected override void OnCollisionStay (Collision collision)
-	{
-		base.OnCollisionStay (collision);
-	}
-
-	protected override void OnCollisionExit (Collision collision)
-	{
-		base.OnCollisionExit (collision);
-	}
-
 	protected override void Start ()
 	{
 		base.Start ();
+
+		LifeTimeInSeconds = GlobalStore.now.TorchLifeTime;
 		_light = GetComponentInChildren<Light> ();
 	}
 
-	protected override void Update ()
+	public override void Resume ()
 	{
-		base.Update ();
+		base.Resume ();
+		if (LifeTimeInSeconds > 0)
+			StartCoroutine("CountDown");
 	}
 }

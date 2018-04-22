@@ -4,3 +4,6 @@ https://assetstore.unity.com/packages/3d/props/interior/simple-torch-7275
 
 2. **Silhouette-Outlined Diffuse** by AnomalousUnderdog. 23 Nov. 2013. CC BY-SA 3.0.
 http://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse
+
+3. **Indie Flower** by Kimberly Geswein. 2010. SIL Open Font License, Version 1.1.
+https://fonts.google.com/specimen/Indie+Flower
