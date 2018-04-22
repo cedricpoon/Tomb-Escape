@@ -51,6 +51,7 @@ public class Torch : Attachable {
 	public override void Resume ()
 	{
 		base.Resume ();
-		StartCoroutine("CountDown");
+		if (LifeTimeInSeconds > 0)
+			StartCoroutine("CountDown");
 	}
 }

@@ -79,6 +79,7 @@ public class Attachable : MonoBehaviour {
 
 	public void Corrupt () {
 		corrupted = true;
+		name += " (Corrupted)";
 	}
 		
 	public virtual void Trigger () {
