@@ -7,3 +7,6 @@ http://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse
 
 3. **Indie Flower** by Kimberly Geswein. 2010. SIL Open Font License, Version 1.1.
 https://fonts.google.com/specimen/Indie+Flower
+
+3. **myze/unity-app** by Cedric Poon. 2016. Apache License Version 2.0.<br/>
+https://github.com/myze/unity-app
