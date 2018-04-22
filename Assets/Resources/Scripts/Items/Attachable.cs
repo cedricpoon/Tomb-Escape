@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Attachable : MonoBehaviour {
 
-	public Handholding hand;
-	public string playerTag;
+	public string handTag = "Hand";
 	public Material highlight;
 
 	public bool IsHeld { get { return held; } }
 
-	private GameObject player;
+	private GameObject player, hand;
 	private bool held, corrupted;
 
 	private List<Material> materialsRef;
@@ -39,8 +38,7 @@ public class Attachable : MonoBehaviour {
 
 		// check if hand entered
 		if (collision.gameObject == player && !held && Input.GetButtonDown("Fire1")) {
-			RemoveMaterial (highlight);
-			Attach ();
+			player.GetComponent<Inventory> ().Add (this);
 		}
 	}
 
@@ -51,7 +49,17 @@ public class Attachable : MonoBehaviour {
 		}
 	}
 
+	public virtual void Resume () {
+		gameObject.SetActive (true);
+	}
+
+	public virtual void Pause () {
+		gameObject.SetActive (false);
+	}
+
 	public virtual void Attach () {
+		RemoveMaterial (highlight);
+
 		held = true;
 
 		// reset components
@@ -67,12 +75,13 @@ public class Attachable : MonoBehaviour {
 			hand.transform.rotation.eulerAngles.z
 		);
 		transform.position = hand.gameObject.transform.position;
-
-		hand.attachedItem = this;
 	}
 
 	public void Corrupt () {
 		corrupted = true;
+	}
+		
+	public virtual void Trigger () {
 	}
 
 	public virtual void Unattach () {
@@ -97,15 +106,16 @@ public class Attachable : MonoBehaviour {
 		_renderer = GetComponentInChildren<Renderer> ();
 		materialsRef = new List<Material>(_renderer.materials);
 
-		if (hand == null) {
-			hand = GameObject.FindGameObjectWithTag (playerTag).GetComponentsInChildren<Handholding> () [0];
-		}
+		hand = GameObject.FindGameObjectWithTag (handTag);
 		// ref of player
 		player = hand.gameObject.transform.root.gameObject;
 	}
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-		
+
+		if (IsHeld && Input.GetButtonDown ("Fire1")) {
+			Trigger ();
+		}
 	}
 }

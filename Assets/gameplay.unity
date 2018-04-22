@@ -241,22 +241,6 @@ MonoBehaviour:
   speed: 1
   sprintExtra: 1
   playerTag: Player
---- !u!1 &804870246 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100008, guid: bd8c1448abb8a4d66b3f3256b4ff0eaf, type: 3}
-  m_PrefabInternal: {fileID: 1146693096}
---- !u!114 &804870249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 804870246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc00efb9fb6e47998475e0808a19f14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedItem: {fileID: 0}
 --- !u!1 &850392916
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +927,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 98.536804
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: bd8c1448abb8a4d66b3f3256b4ff0eaf, type: 3}
+      propertyPath: m_TagString
+      value: Hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd8c1448abb8a4d66b3f3256b4ff0eaf, type: 3}
   m_IsPrefabParent: 0
@@ -967,6 +955,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sprint: 8
+--- !u!114 &1146693101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146693097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96834c67427554c8296d001293c1af57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryList: []
+  position: 0
+  SizeofInventory: 3
 --- !u!136 &1146693104
 CapsuleCollider:
   m_ObjectHideFlags: 0

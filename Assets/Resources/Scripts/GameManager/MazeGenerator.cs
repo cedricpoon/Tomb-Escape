@@ -29,8 +29,13 @@ public class MazeGenerator : MonoBehaviour {
 
 	enum Direction { E, S, W, N };
 
+	bool isFreePlayMode; /* GlobalStored */
+
 	// Use this for initialization
 	void Start () {
+
+		isFreePlayMode = GlobalStore.now.IsFreePlayMode;
+
 		// Render renderSize maze first
 		StartCoroutine("RenderNext", SpawnRoomWithLoc(eventRooms[eventProgress++], Vector3.zero));
 	}
@@ -182,7 +187,7 @@ public class MazeGenerator : MonoBehaviour {
 				}
 			}
 
-			if (noOfValidArea >= renderIfAvailable) {
+			if (noOfValidArea >= renderIfAvailable && (eventProgress < eventRooms.Length || isFreePlayMode)) {
 				StartCoroutine ("RenderNext", roomRef.Room);
 				// Reset traveled counter
 				roomRef.Traveled = 0;
