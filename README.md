@@ -7,4 +7,4 @@ The dashboard that includes all features and to-do list of Tomb Escape.
 ## Acknowledgement
 Click [here](/CREDIT.md) for the list of open source libraries Tomb Escape used.
 ## License
-All Rights Reserved. 
+Apache 2.0 
