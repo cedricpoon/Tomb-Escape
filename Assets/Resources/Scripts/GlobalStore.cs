@@ -14,7 +14,13 @@ public class GlobalStore
 	public int SizeofInventoryWithoutBag;
 	public int SizeofInventoryWithBag;
 	public bool IsFreePlayMode;
+
+	// Item
 	public int TorchLifeTime;
+
+	// Enemy
+	public int LifeOfSkeleton;
+	public float SpeedOfSkeleton;
 
 	public GlobalStore (LevelEnum level)
 	{
@@ -27,6 +33,9 @@ public class GlobalStore
 
 			SizeofInventoryWithBag = 6;
 			SizeofInventoryWithoutBag = 3;
+			LifeOfSkeleton = 2;
+			SpeedOfSkeleton = 1;
+
 			TorchLifeTime = 40;
 
 			break;
