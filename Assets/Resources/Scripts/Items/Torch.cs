@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Torch : Attachable {
 
+	public AudioClip impact;
+	AudioSource pickupSound;
+
 	private Light _light;
 
 	int LifeTimeInSeconds; /* GlobalStored */
@@ -23,6 +26,7 @@ public class Torch : Attachable {
 
 	public override void Attach ()
 	{
+		pickupSound.PlayOneShot (impact, 0.7f);
 		base.Attach ();
 
 		if (!startedCountDown) {
@@ -46,6 +50,7 @@ public class Torch : Attachable {
 
 		LifeTimeInSeconds = GlobalStore.now.TorchLifeTime;
 		_light = GetComponentInChildren<Light> ();
+		pickupSound = GetComponent<AudioSource> ();
 	}
 
 	public override void Resume ()

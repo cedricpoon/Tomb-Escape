@@ -13927,3 +13927,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handTag: Hand
   highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
