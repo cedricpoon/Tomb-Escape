@@ -8,5 +8,8 @@ http://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse
 3. **Indie Flower** by Kimberly Geswein. 2010. SIL Open Font License, Version 1.1.
 https://fonts.google.com/specimen/Indie+Flower
 
-4. **Fantasy Monster - Skeleton** by Teamjoker. 19 Aug. 2015. Unity Asset Store Terms of Service and EULA.
+4. **myze/unity-app** by Cedric Poon. 2016. Apache License Version 2.0.<br/>
+https://github.com/myze/unity-app
+
+5. **Fantasy Monster - Skeleton** by Teamjoker. 19 Aug. 2015. Unity Asset Store Terms of Service and EULA.
 https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
