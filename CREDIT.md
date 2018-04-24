@@ -13,3 +13,6 @@ https://github.com/myze/unity-app
 
 5. **Fantasy Monster - Skeleton** by Teamjoker. 19 Aug. 2015. Unity Asset Store Terms of Service and EULA.
 https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
+
+6. **Free Fantasy Spider** by Kalamona. 14 Dec. 2017. Unity Asset Store Terms of Service and EULA.
+https://assetstore.unity.com/packages/3d/characters/creatures/free-fantasy-spider-10104
