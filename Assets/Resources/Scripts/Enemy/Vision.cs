@@ -9,7 +9,7 @@ public class Vision : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		host = transform.root.GetComponent<Enemy> ();
+		host = GetComponentInParent<Enemy> ();
 	}
 	
 	// Update is called once per frame
@@ -23,13 +23,13 @@ public class Vision : MonoBehaviour
 	}
 
 	void OnTriggerStay(Collider other) {
-		if (other.gameObject == Target) {
+		if (other.gameObject == Target && Target != null) {
 			host.Trace (Target);
 		}
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (other.gameObject == Target) {
+		if (other.gameObject == Target && Target != null) {
 			host.Flee ();
 		}
 	}

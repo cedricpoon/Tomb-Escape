@@ -89,19 +89,18 @@ public class Spider : Enemy
 	}
 
 	void Detonate () {
-		Collider[] colliders = Physics.OverlapSphere (Vector3.zero, GlobalStore.now.BlastRadius);
+		Collider[] colliders = Physics.OverlapSphere (this.transform.position, GlobalStore.now.BlastRadius);
 
 		foreach (Collider col in colliders) {
-			if (col.attachedRigidbody == null || col.attachedRigidbody.gameObject == gameObject)
+			if (col.GetComponent<Rigidbody>() == null || col.gameObject == gameObject)
 				continue;
 			else {
-
 				if (col.gameObject == Target) {
 					/* Damage Target */
 				}
 
-				col.attachedRigidbody.AddExplosionForce (
-					Mathf.Pow(GlobalStore.now.BlastRadius, 2.75f), 
+				col.GetComponent<Rigidbody>().AddExplosionForce (
+					Mathf.Pow(GlobalStore.now.BlastRadius, 2f), 
 					this.transform.position, 
 					GlobalStore.now.BlastRadius,
 					0.5f,
