@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SizeOfInventory = GlobalStore.now.SizeofInventoryWithoutBag;
+		SizeOfInventory = GlobalStore.now.Inventory_Size_NoBag;
 
 		for (int i = 0; i < SizeOfInventory; i++) {
 			inventoryList.Add (null);
@@ -90,10 +90,10 @@ public class Inventory : MonoBehaviour {
 
 	public void Enlarge () {
 		// If bag is found
-		for (int i = SizeOfInventory - 1; i < GlobalStore.now.SizeofInventoryWithBag; i++)
+		for (int i = SizeOfInventory - 1; i < GlobalStore.now.Inventory_Size_Bag; i++)
 			inventoryList.Add (null);
 		
-		SizeOfInventory = GlobalStore.now.SizeofInventoryWithBag;
+		SizeOfInventory = GlobalStore.now.Inventory_Size_Bag;
 	}
 
 	public void Add (Attachable item) {

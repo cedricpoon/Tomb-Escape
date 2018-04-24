@@ -17,8 +17,8 @@ public class Spider : Enemy
 	protected override void Start ()
 	{
 		base.Init (
-			GlobalStore.now.LifeOfSpider, 
-			GlobalStore.now.SpeedOfSpider,
+			GlobalStore.now.Spider_Life, 
+			GlobalStore.now.Spider_Speed,
 			GameObject.FindGameObjectWithTag ("Player")
 		);
 		base.Start ();
@@ -89,7 +89,7 @@ public class Spider : Enemy
 	}
 
 	void Detonate () {
-		Collider[] colliders = Physics.OverlapSphere (this.transform.position, GlobalStore.now.BlastRadius);
+		Collider[] colliders = Physics.OverlapSphere (this.transform.position, GlobalStore.now.Spider_Blast_Radius);
 
 		foreach (Collider col in colliders) {
 			if (col.GetComponent<Rigidbody>() == null || col.gameObject == gameObject)
@@ -100,9 +100,9 @@ public class Spider : Enemy
 				}
 
 				col.GetComponent<Rigidbody>().AddExplosionForce (
-					Mathf.Pow(GlobalStore.now.BlastRadius, 2f), 
+					Mathf.Pow(GlobalStore.now.Spider_Blast_Radius, 2f), 
 					this.transform.position, 
-					GlobalStore.now.BlastRadius,
+					GlobalStore.now.Spider_Blast_Radius,
 					0.5f,
 					ForceMode.Impulse
 				);

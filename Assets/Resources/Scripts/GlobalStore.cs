@@ -11,20 +11,24 @@ public class GlobalStore
 	public LevelEnum Level;
 
 	// Level informations
-	public int SizeofInventoryWithoutBag;
-	public int SizeofInventoryWithBag;
+	public int Inventory_Size_NoBag;
+	public int Inventory_Size_Bag;
 	public bool IsFreePlayMode;
 
 	// Item
-	public int TorchLifeTime;
+	public int Torch_Time;
 
 	// Enemy
-	public int LifeOfSkeleton;
-	public float SpeedOfSkeleton;
+	public int Skeleton_Life;
+	public float Skeleton_Speed;
 
-	public int LifeOfSpider;
-	public float SpeedOfSpider;
-	public float BlastRadius;
+	public int Spider_Life;
+	public float Spider_Speed;
+	public float Spider_Blast_Radius;
+
+	public int Mummy_Life;
+	public float Mummy_Speed;
+	public float[] Mummy_Scale;
 
 	public GlobalStore (LevelEnum level)
 	{
@@ -35,19 +39,24 @@ public class GlobalStore
 		// Setup various level
 		case(LevelEnum.Easy):
 
-			SizeofInventoryWithBag = 6;
-			SizeofInventoryWithoutBag = 3;
+			Inventory_Size_Bag = 6;
+			Inventory_Size_NoBag = 3;
 
-			LifeOfSkeleton = 2;
-			SpeedOfSkeleton = 1;
+			Skeleton_Life = 2;
+			Skeleton_Speed = 1;
 
-			LifeOfSpider = 1;
-			SpeedOfSpider = 2;
-			BlastRadius = 4;
+			Spider_Life = 1;
+			Spider_Speed = 2;
+			Spider_Blast_Radius = 4;
 
-			TorchLifeTime = 40;
+			Mummy_Life = 1;
+			Mummy_Speed = 1.5f;
+			Mummy_Scale = new float[] { 0.75f, 1.5f };
+
+			Torch_Time = 40;
 
 			break;
+
 		case (LevelEnum.Hard):
 
 			/* To be set */

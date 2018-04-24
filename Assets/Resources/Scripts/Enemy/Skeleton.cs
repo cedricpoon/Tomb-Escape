@@ -7,8 +7,8 @@ public class Skeleton : Enemy {
 	protected override void Start ()
 	{
 		base.Init (
-			GlobalStore.now.LifeOfSkeleton, 
-			GlobalStore.now.SpeedOfSkeleton,
+			GlobalStore.now.Skeleton_Life, 
+			GlobalStore.now.Skeleton_Speed,
 			GameObject.FindGameObjectWithTag ("Player")
 		);
 		base.Start ();

@@ -44,7 +44,7 @@ public class Torch : Attachable {
 	{
 		base.Start ();
 
-		LifeTimeInSeconds = GlobalStore.now.TorchLifeTime;
+		LifeTimeInSeconds = GlobalStore.now.Torch_Time;
 		_light = GetComponentInChildren<Light> ();
 	}
 
