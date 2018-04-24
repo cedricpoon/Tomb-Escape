@@ -22,6 +22,10 @@ public class GlobalStore
 	public int LifeOfSkeleton;
 	public float SpeedOfSkeleton;
 
+	public int LifeOfSpider;
+	public float SpeedOfSpider;
+	public float BlastRadius;
+
 	public GlobalStore (LevelEnum level)
 	{
 		GlobalStore.now = this;
@@ -33,8 +37,13 @@ public class GlobalStore
 
 			SizeofInventoryWithBag = 6;
 			SizeofInventoryWithoutBag = 3;
+
 			LifeOfSkeleton = 2;
 			SpeedOfSkeleton = 1;
+
+			LifeOfSpider = 1;
+			SpeedOfSpider = 2;
+			BlastRadius = 4;
 
 			TorchLifeTime = 40;
 

@@ -14,64 +14,35 @@ public class Skeleton : Enemy {
 		base.Start ();
 	}
 
-	protected override void Update ()
-	{
-		base.Update ();
-	}
-
-	protected override void Dead ()
-	{
-		base.AnimatorRef.SetTrigger ("Death");
-
-		new WaitForAnimationIEum (base.AnimatorRef, delegate(object[] objects) {
-			base.Dead();
-		}).Run (this);
-	}
-
-	public override void Move (Vector3 rotation)
-	{
-		transform.rotation = Quaternion.Slerp(
-			transform.rotation, 
-			Quaternion.Euler(rotation), 
-			Time.deltaTime * Enemy.RotationDamping
-		);
-
-		// Move towards player
-		transform.position += 
-			transform.forward * 
-			base.MoveSpeed * 
-			Time.deltaTime;
-	}
-
 	public override void Trace (GameObject target)
 	{
 		base.Trace (target);
-
-		base.AnimatorRef.SetInteger ("IdleWalkInt", 1);
-
-		Move (Quaternion.LookRotation (
-			target.transform.position - transform.position
-		).eulerAngles);
+		base._Animator.SetInteger ("IdleWalkInt", 1);
 	}
 
 	public override void Flee ()
 	{
 		base.Flee ();
-		base.AnimatorRef.SetInteger ("IdleWalkInt", 0);
+		base._Animator.SetInteger ("IdleWalkInt", 0);
 	}
 
 	protected override void Attack ()
 	{
-		if (!base.AnimatorRef.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
-			base.AnimatorRef.SetTrigger ("Attack");
+		if (!base._Animator.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
+			base._Animator.SetTrigger ("Attack");
 		}
 	}
 
 	public override void Damage ()
 	{
-		if (!base.AnimatorRef.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) {
+		if (!base._Animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) {
 			base.Damage ();
-			base.AnimatorRef.SetTrigger ("Damage");
+			base._Animator.SetTrigger ("Damage");
+
+			// Killed
+			if (base.Life == 0) {
+				base._Animator.SetTrigger ("Death");
+			}
 		}
 	}
 }

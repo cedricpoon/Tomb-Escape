@@ -8,14 +8,14 @@ public class WaitForAnimationIEum
 
 	NextAction _nextAction;
 
-	Animator _animation;
+	Animation _animation;
 
-	public WaitForAnimationIEum SetAnimation (Animator animation) {
+	public WaitForAnimationIEum SetAnimation (Animation animation) {
 		_animation = animation;
 		return this;
 	}
 
-	public WaitForAnimationIEum (Animator animation, NextAction nextAction) : base() {
+	public WaitForAnimationIEum (Animation animation, NextAction nextAction) : base() {
 		_nextAction = nextAction;
 		_animation = animation;
 	}
@@ -27,7 +27,7 @@ public class WaitForAnimationIEum
 	IEnumerator RunEnum(object[] objects) {
 		do {
 			yield return null;
-		} while (!_animation.GetCurrentAnimatorStateInfo(0).IsName("Exit"));
+		} while (_animation.isPlaying);
 		_nextAction (objects);
 	}
 }
