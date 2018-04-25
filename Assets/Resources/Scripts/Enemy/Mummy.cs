@@ -52,7 +52,7 @@ public class Mummy : Enemy
 		base._Animator.SetTrigger ("Damage");
 
 		// Killed
-		if (base.Life == 0) {
+		if (base.Life <= 0) {
 			base._Animator.SetTrigger ("Death");
 		}
 	}
