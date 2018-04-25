@@ -231,10 +231,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4257342476612006}
-  - component: {fileID: 114518867412409670}
   - component: {fileID: 33495881562265296}
   - component: {fileID: 23000486283397600}
   - component: {fileID: 65879031740380014}
+  - component: {fileID: 114131716409708696}
   m_Layer: 0
   m_Name: CornerMech (1)
   m_TagString: Untagged
@@ -1282,6 +1282,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114131716409708696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1778163908933120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7abb7c013854df08f132a0d829b8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
+  hasEnemy: 0
 --- !u!114 &114230455150410970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1291,8 +1304,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffb7b5036285945318898e633dbc1501, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Forward: 0
   Back: 0
   Left: 0
@@ -1306,24 +1319,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5df709efbc53d4632ae2a52fb4427f90, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
-  handTag: Hand
-  impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
---- !u!114 &114131716409708696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1778163908933120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7abb7c013854df08f132a0d829b8fa, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  targetTag: Enemy
-  hasEnemy: 0
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visited: 0
 --- !u!114 &114619409626299888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1333,10 +1331,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  TriggerLock: 1
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
 --- !u!114 &114756600789838108
 MonoBehaviour:
@@ -1347,8 +1346,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc7abb7c013854df08f132a0d829b8fa, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTag: Enemy
   hasEnemy: 0
 --- !u!114 &114944314169274444
@@ -1360,8 +1359,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14e1ccb9bc5e66e46b9ebc20caf6db2d, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   TorchLight: {fileID: 1315926593121110}
   MainFlame: {fileID: 1512403925846666}
   BaseFlame: {fileID: 1498880796434672}
@@ -1378,8 +1377,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc7abb7c013854df08f132a0d829b8fa, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTag: Enemy
   hasEnemy: 0
 --- !u!198 &198503181748666468

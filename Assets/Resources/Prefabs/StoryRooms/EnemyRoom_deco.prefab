@@ -7784,8 +7784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  TriggerLock: 1
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
 --- !u!114 &114021974666893494
 MonoBehaviour:
@@ -7798,6 +7799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f9567e781fc48928b7e344f3591bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 0}
   randMoveSeconds: 5
 --- !u!114 &114119834920688636
 MonoBehaviour:
@@ -7823,6 +7825,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3af1fb56c146d6a8aaba1958054ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 0}
+  Attackable: 0
+  IsAttacking: 0
+  IsDamaging: 0
 --- !u!114 &114499115026717888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7889,8 +7895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  TriggerLock: 1
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
 --- !u!114 &114822831051123188
 MonoBehaviour:
@@ -7915,6 +7922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36b945d1644743bfa162ecaef3246b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 0}
 --- !u!114 &114853038411198846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8002,8 +8010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
+  TriggerLock: 1
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
 --- !u!136 &136126442323369074
 CapsuleCollider:
