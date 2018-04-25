@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour {
+public abstract class Enemy : Wrappable {
 
 	protected Animator _Animator { get; private set; }
 
@@ -16,10 +16,13 @@ public abstract class Enemy : MonoBehaviour {
 
 	public int Life { get; private set; }
 
-	protected void Init (int life, float moveSpeed, GameObject target) {
+	public int Power { get; private set; }
+
+	protected void Init (int life, float moveSpeed, GameObject target, int damage) {
 		this.Life = life;
 		this.MoveSpeed = moveSpeed;
 		this.Target = target;
+		this.Power = damage;
 
 		// Align with vision
 		if (GetComponentInChildren<Vision> () != null) {
@@ -28,7 +31,10 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	protected virtual void Start () {
+	protected override void Start () {
+
+		base.Start ();
+
 		_Animator = gameObject.GetComponentInChildren<Animator>();
 		_Animation = gameObject.GetComponentInChildren<Animation>();
 	}
@@ -66,6 +72,12 @@ public abstract class Enemy : MonoBehaviour {
 
 	public virtual void Damage () {
 		this.Life--;
+
+		base.AddMaterial (Wrapper);
+
+		new WaitForSecondsIEnum (1f, delegate {
+			base.RemoveMaterial(Wrapper);
+		}).Run (this);
 	}
 
 	void OnCollisionStay (Collision collisionInfo) {

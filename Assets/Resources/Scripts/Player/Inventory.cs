@@ -77,7 +77,7 @@ public class Inventory : MonoBehaviour {
 				this, 
 				inventoryList [position] == null ? "[ Empty ]" : inventoryList [position].name, 
 				MessageBox.DURATION_SHORT, 
-				100
+				GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
 			).SetColor (new Color (0.5f, 0.5f, 0.5f));
 
 			// Lock scrolling for 0.2 seconds
@@ -97,8 +97,9 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void Add (Attachable item) {
-		if (inventoryList [position] == null)
+		if (inventoryList [position] == null) {
 			item.Attach ();
-		inventoryList [position] = item;
+			inventoryList [position] = item;
+		}
 	}
 }

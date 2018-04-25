@@ -8,6 +8,8 @@ public class WaitForSecondsIEnum
 
 	NextAction _nextAction;
 
+	Coroutine running;
+
 	float _seconds;
 
 	public WaitForSecondsIEnum SetSeconds (float seconds) {
@@ -20,8 +22,12 @@ public class WaitForSecondsIEnum
 		_seconds = seconds;
 	}
 
+	public void Stop (MonoBehaviour reference){
+		reference.StopCoroutine (running);	
+	}
+
 	public void Run(MonoBehaviour reference, object[] objects = null) {
-		reference.StartCoroutine (RunEnum (objects));
+		running = reference.StartCoroutine (RunEnum (objects));
 	}
 
 	IEnumerator RunEnum(object[] objects) {

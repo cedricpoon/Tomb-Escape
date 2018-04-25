@@ -34,7 +34,7 @@ public class MazeGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		isFreePlayMode = GlobalStore.now.IsFreePlayMode;
+		isFreePlayMode = GlobalStore.IsFreePlayMode;
 
 		// Render renderSize maze first
 		StartCoroutine("RenderNext", SpawnRoomWithLoc(eventRooms[eventProgress++], Vector3.zero));

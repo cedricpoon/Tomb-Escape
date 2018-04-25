@@ -31,8 +31,6 @@ public class Torch : Attachable {
 		if (!startedCountDown) {
 			// first time pickup
 			startedCountDown = true;
-			_light.range = LifeTimeInSeconds;
-			GetComponent<Torchelight> ().IntensityLight = GetComponent<Torchelight> ().MaxLightIntensity;
 
 			StartCoroutine("CountDown");
 		}
@@ -47,10 +45,14 @@ public class Torch : Attachable {
 	{
 		base.Start ();
 
+		HeldOffset = Vector3.right * 90;
+
 		LifeTimeInSeconds = GlobalStore.now.Torch_Time;
 		_light = GetComponentInChildren<Light> ();
-		pickup = GetComponent<AudioSource> ();
 
+		_light.range = LifeTimeInSeconds;
+		GetComponent<Torchelight> ().IntensityLight = GetComponent<Torchelight> ().MaxLightIntensity;
+		pickup = GetComponent<AudioSource> ();
 	}
 
 	public override void Resume ()
