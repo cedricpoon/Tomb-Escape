@@ -167,7 +167,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 64.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -437,7 +437,7 @@ MonoBehaviour:
   - {fileID: 1325357115237744, guid: ac5c328a8c32b466884c24927c55f2f6, type: 2}
   eventProgress: 0
   eventRooms:
-  - {fileID: 1912346138079530, guid: 29790af4215cd47da8ccf69dc4458b04, type: 2}
+  - {fileID: 1530190082126560, guid: 29790af4215cd47da8ccf69dc4458b04, type: 2}
   - {fileID: 1428423384887046, guid: 97c56bbedd00d492cb52617ead4e75be, type: 2}
   - {fileID: 1428423384887046, guid: 97c56bbedd00d492cb52617ead4e75be, type: 2}
 --- !u!114 &887860422
