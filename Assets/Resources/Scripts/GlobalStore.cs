@@ -17,6 +17,8 @@ public class GlobalStore
 
 	// Item
 	public int Torch_Time;
+	public int Handgun_Bullet_Amount;
+	public float Handgun_Bullet_Speed;
 
 	// Enemy
 	public int Skeleton_Life;
@@ -54,6 +56,8 @@ public class GlobalStore
 			Mummy_Scale = new float[] { 0.75f, 1.5f };
 
 			Torch_Time = 40;
+			Handgun_Bullet_Amount = 10;
+			Handgun_Bullet_Speed = 100f;
 
 			break;
 

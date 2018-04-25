@@ -9,23 +9,29 @@ public class Attachable : MonoBehaviour {
 
 	public bool IsHeld { get { return held; } }
 
-	private GameObject player, hand;
-	private bool held, corrupted;
+	protected Vector3 HeldOffset;
 
-	private List<Material> materialsRef;
-	private Renderer _renderer;
+	private GameObject player, hand;
+	private bool held, corrupted, _triggerLock = true;
+
+	private List<List<Material>> materialsRef = new List<List<Material>>();
+	private Renderer[] _renderers;
 
 	void AddMaterial(Material m) {
-		if (!materialsRef.Contains (m)) {
-			materialsRef.Add (m);
-			_renderer.materials = materialsRef.ToArray ();
+		foreach (List<Material> _ref in materialsRef) {
+			if (!_ref.Contains (m)) {
+				_ref.Add (m);
+				_renderers[materialsRef.IndexOf(_ref)].materials = _ref.ToArray ();
+			}
 		}
 	}
 
 	void RemoveMaterial(Material m) {
-		if (materialsRef.Contains (m)) {
-			materialsRef.Remove (m);
-			_renderer.materials = materialsRef.ToArray ();
+		foreach (List<Material> _ref in materialsRef) {
+			if (_ref.Contains (m)) {
+				_ref.Remove (m);
+				_renderers[materialsRef.IndexOf(_ref)].materials = _ref.ToArray ();
+			}
 		}
 	}
 
@@ -69,21 +75,16 @@ public class Attachable : MonoBehaviour {
 
 		// pickup
 		transform.parent = hand.transform;
-		transform.eulerAngles = new Vector3 (
-			hand.transform.rotation.eulerAngles.x + 45,
-			hand.transform.rotation.eulerAngles.y + 45,
-			hand.transform.rotation.eulerAngles.z
-		);
+		transform.localRotation = Quaternion.Euler(HeldOffset);
 		transform.position = hand.gameObject.transform.position;
 	}
 
-	public void Corrupt () {
+	public void Corrupt (string name_append = "Damaged") {
 		corrupted = true;
-		name += " (Corrupted)";
+		name += " (" + name_append + ")";
 	}
 		
-	public virtual void Trigger () {
-	}
+	public virtual void Trigger () { /* Not implemented */ }
 
 	public virtual void Unattach () {
 		// reset rigidbody
@@ -104,8 +105,12 @@ public class Attachable : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Start () {
 		// get renderer reference
-		_renderer = GetComponentInChildren<Renderer> ();
-		materialsRef = new List<Material>(_renderer.materials);
+		_renderers = GetComponentsInChildren<Renderer> ();
+		foreach (Renderer _r in _renderers) {
+			if (_r.GetComponent<Renderer> () != null) {
+				materialsRef.Add (new List<Material> (_r.materials));
+			}
+		}
 
 		hand = GameObject.FindGameObjectWithTag (handTag);
 		// ref of player
@@ -116,7 +121,10 @@ public class Attachable : MonoBehaviour {
 	protected virtual void Update () {
 
 		if (IsHeld && Input.GetButtonDown ("Fire1")) {
-			Trigger ();
+			if (!_triggerLock)
+				Trigger ();
+			else
+				_triggerLock = false;
 		}
 	}
 }

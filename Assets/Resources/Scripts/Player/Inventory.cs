@@ -97,8 +97,9 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void Add (Attachable item) {
-		if (inventoryList [position] == null)
+		if (inventoryList [position] == null) {
 			item.Attach ();
-		inventoryList [position] = item;
+			inventoryList [position] = item;
+		}
 	}
 }
