@@ -143,7 +143,7 @@ public class Spider : Enemy
 	{
 		base.Damage ();
 
-		if (Life == 0) {
+		if (Life <= 0) {
 			Dead ();
 		}
 	}
