@@ -58,8 +58,8 @@ public class GlobalStore
 			Player_Life = 3;
 			Player_Invincible_Time = 1.5f;
 
-			Inventory_Size_Bag = 6;
-			Inventory_Size_NoBag = 3;
+			Inventory_Size_Bag = 5;
+			Inventory_Size_NoBag = 2;
 
 			Skeleton_Life = 2;
 			Skeleton_Speed = 1;
