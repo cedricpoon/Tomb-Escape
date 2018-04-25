@@ -36,6 +36,7 @@ public class Health : Wrappable
 			
 			IsDead = true;
 			_Animator.SetTrigger ("Death");
+			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 		}
 	}
 
@@ -44,18 +45,17 @@ public class Health : Wrappable
 	}
 
 	public void Damage (int cost) {
-		if (!IsInvincible) {
-			
+		if (!IsInvincible && !IsDamaging) {
 			IsDamaging = true;
+			GetComponent<PlayerMovement> ().MoveLock = true;
 
 			Life -= cost;
-
-			// Animate
-			_Animator.SetTrigger("Damage");
 
 			if (Life <= 0) {
 				Death ();
 			} else {
+				// Animate
+				_Animator.SetTrigger("Damage");
 
 				// Align with enemy
 				base.AddMaterial (Wrapper);

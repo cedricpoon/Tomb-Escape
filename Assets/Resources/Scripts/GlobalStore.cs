@@ -24,8 +24,12 @@ public class GlobalStore
 
 	// Item
 	public int Torch_Time;
+
 	public int Handgun_Bullet_Amount;
 	public float Handgun_Bullet_Speed;
+
+	public int Axe_Usage_Limit;
+	public float Axe_Attack_Range;
 
 	// Enemy
 	public int Skeleton_Life;
@@ -72,8 +76,12 @@ public class GlobalStore
 			Mummy_Damage = 1;
 
 			Torch_Time = 40;
-			Handgun_Bullet_Amount = 10;
+
+			Handgun_Bullet_Amount = 5;
 			Handgun_Bullet_Speed = 100f;
+
+			Axe_Usage_Limit = 20;
+			Axe_Attack_Range = 0.8f;
 
 			break;
 

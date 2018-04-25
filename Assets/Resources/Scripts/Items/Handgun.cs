@@ -61,7 +61,14 @@ public class Handgun : Attachable {
 	{
 		base.Start ();
 
+		HasTrigger = true;
 		noOfBullets = GlobalStore.now.Handgun_Bullet_Amount;
 		HeldOffset = new Vector3 (0, 120, 45);
+	}
+
+	protected override void Update ()
+	{
+		player.GetComponent<Animator> ().SetInteger ("AttackType", 1);
+		base.Update ();
 	}
 }

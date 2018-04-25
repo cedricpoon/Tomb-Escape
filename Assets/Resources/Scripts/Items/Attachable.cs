@@ -6,12 +6,17 @@ public class Attachable : Wrappable {
 
 	public string handTag = "Hand";
 
+	public bool TriggerLock = true;
+
 	public bool IsHeld { get { return held; } }
 
 	protected Vector3 HeldOffset;
 
-	private GameObject player, hand;
-	private bool held, corrupted, _triggerLock = true;
+	protected GameObject player, hand;
+
+	protected bool HasTrigger = false;
+
+	private bool held, corrupted;
 
 	protected virtual void OnCollisionStay(Collision collision)
 	{
@@ -93,11 +98,13 @@ public class Attachable : Wrappable {
 	// Update is called once per frame
 	protected virtual void Update () {
 
-		if (IsHeld && Input.GetButtonDown ("Fire1")) {
-			if (!_triggerLock)
-				Trigger ();
+		if (IsHeld && Input.GetButtonDown ("Fire1") && !corrupted && HasTrigger) {
+			if (!TriggerLock) {
+				player.GetComponent<Animator> ().SetTrigger ("Attack");
+				TriggerLock = true;
+			}
 			else
-				_triggerLock = false;
+				TriggerLock = false;
 		}
 	}
 }
