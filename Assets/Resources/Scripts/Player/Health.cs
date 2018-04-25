@@ -42,6 +42,12 @@ public class Health : Wrappable
 
 	public void Heal () {
 		Life++;
+		new MessageBox (
+			this, 
+			"Health +1", 
+			MessageBox.DURATION_SHORT, 
+			GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
+		).SetColor (Color.green).Show ();
 	}
 
 	public void Damage (int cost) {
@@ -50,6 +56,13 @@ public class Health : Wrappable
 			GetComponent<PlayerMovement> ().MoveLock = true;
 
 			Life -= cost;
+
+			new MessageBox (
+				this, 
+				"Health -1", 
+				MessageBox.DURATION_SHORT, 
+				GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
+			).SetColor (Color.red).Show ();
 
 			if (Life <= 0) {
 				Death ();

@@ -20,6 +20,16 @@ public class Skeleton : Enemy {
 		base.Start ();
 	}
 
+	protected override void Update ()
+	{
+		base.Update ();
+
+		// Killed
+		if (base.Life <= 0) {
+			base._Animator.SetTrigger ("Death");
+		}
+	}
+
 	public override void Trace (GameObject target)
 	{
 		base.Trace (target);
@@ -67,11 +77,6 @@ public class Skeleton : Enemy {
 
 			base.Damage ();
 			base._Animator.SetTrigger ("Damage");
-
-			// Killed
-			if (base.Life <= 0) {
-				base._Animator.SetTrigger ("Death");
-			}
 		}
 	}
 }
