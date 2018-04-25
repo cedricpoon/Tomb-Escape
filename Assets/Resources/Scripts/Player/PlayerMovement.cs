@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour {
 			
 
 		transform.Translate(0, 0, z);
+
+
 	}
 
 	void FixedUpdate() {
