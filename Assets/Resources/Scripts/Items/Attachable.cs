@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attachable : MonoBehaviour {
+public class Attachable : Wrappable {
 
 	public string handTag = "Hand";
-	public Material highlight;
 
 	public bool IsHeld { get { return held; } }
 
@@ -14,32 +13,11 @@ public class Attachable : MonoBehaviour {
 	private GameObject player, hand;
 	private bool held, corrupted, _triggerLock = true;
 
-	private List<List<Material>> materialsRef = new List<List<Material>>();
-	private Renderer[] _renderers;
-
-	void AddMaterial(Material m) {
-		foreach (List<Material> _ref in materialsRef) {
-			if (!_ref.Contains (m)) {
-				_ref.Add (m);
-				_renderers[materialsRef.IndexOf(_ref)].materials = _ref.ToArray ();
-			}
-		}
-	}
-
-	void RemoveMaterial(Material m) {
-		foreach (List<Material> _ref in materialsRef) {
-			if (_ref.Contains (m)) {
-				_ref.Remove (m);
-				_renderers[materialsRef.IndexOf(_ref)].materials = _ref.ToArray ();
-			}
-		}
-	}
-
 	protected virtual void OnCollisionStay(Collision collision)
 	{
 		// selectable
 		if (collision.gameObject == player && !held) {
-			AddMaterial (highlight);
+			AddMaterial (Wrapper);
 		}
 
 		// check if hand entered
@@ -51,7 +29,7 @@ public class Attachable : MonoBehaviour {
 	protected virtual void OnCollisionExit(Collision collision)
 	{
 		if (collision.gameObject == player) {
-			RemoveMaterial (highlight);
+			RemoveMaterial (Wrapper);
 		}
 	}
 
@@ -64,7 +42,7 @@ public class Attachable : MonoBehaviour {
 	}
 
 	public virtual void Attach () {
-		RemoveMaterial (highlight);
+		RemoveMaterial (Wrapper);
 
 		held = true;
 
@@ -103,14 +81,9 @@ public class Attachable : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	protected virtual void Start () {
-		// get renderer reference
-		_renderers = GetComponentsInChildren<Renderer> ();
-		foreach (Renderer _r in _renderers) {
-			if (_r.GetComponent<Renderer> () != null) {
-				materialsRef.Add (new List<Material> (_r.materials));
-			}
-		}
+	protected override void Start () {
+
+		base.Start ();
 
 		hand = GameObject.FindGameObjectWithTag (handTag);
 		// ref of player

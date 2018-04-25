@@ -27,6 +27,7 @@ public class Handgun : Attachable {
 			);
 			_bullet.transform.rotation = this.transform.root.rotation;
 
+			// Bullet flies
 			_bullet.GetComponent<Rigidbody> ().AddForce (
 				_bullet.transform.forward * GlobalStore.now.Handgun_Bullet_Speed, 
 				ForceMode.VelocityChange
@@ -38,10 +39,21 @@ public class Handgun : Attachable {
 				_bullet.transform.position.z
 			);
 
+			// Light effect
+			this.transform.root.GetComponentInChildren<Light>().intensity *= 2;
+			this.transform.root.GetComponentInChildren<Light> ().range *= 2;
+
+			new WaitForSecondsIEnum (0.2f, delegate(object[] objects) {
+				this.transform.root.GetComponentInChildren<Light>().intensity /= 2;
+				this.transform.root.GetComponentInChildren<Light> ().range /= 2;
+			}).Run(this);
+
 			noOfBullets--;
 
-			if (noOfBullets == 0)
+			if (noOfBullets == 0) {
 				base.Corrupt ("Out of Ammo");
+				MessageBox.Show (this, "Out of Ammo!", MessageBox.DURATION_SHORT, GlobalStore.ON_SCREEN_NOTICE_UPPER_Y);
+			}
 		}
 	}
 

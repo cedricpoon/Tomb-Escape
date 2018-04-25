@@ -45,6 +45,28 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!114 &114521567290091514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c2fd631b02d4b1ebf380baf3c6cadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114527799256326642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c90794d68054df59eb70f915049524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114643158572167428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +76,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24764bd3eb035491aa2d400e9a585359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114845529918063762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96ce920511cb4eae9ebb389babcae9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1101 &1101030220545492322
@@ -351,7 +384,8 @@ AnimatorState:
   - {fileID: 1101030220545492322}
   - {fileID: 1101068652860457964}
   - {fileID: 1101889543479844982}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 114845529918063762}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -378,7 +412,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101119537948923354}
   - {fileID: 1101133471924553624}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 114521567290091514}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -388,7 +423,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: dfc15c633f0d98141920018f79a042a6, type: 3}
-  m_Tag: 
+  m_Tag: Attack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 

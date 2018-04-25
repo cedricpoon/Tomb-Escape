@@ -2264,6 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f9567e781fc48928b7e344f3591bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 361bc7bc6c9f746d6a8f323f01783fa0, type: 2}
   randMoveSeconds: 5
 --- !u!114 &114937079926988482
 MonoBehaviour:

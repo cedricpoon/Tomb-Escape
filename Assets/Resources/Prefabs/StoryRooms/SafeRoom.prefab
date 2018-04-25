@@ -1306,8 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae6abae49afe4b90bc3593dfa75a789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}
 --- !u!114 &114131716409708696
 MonoBehaviour:

@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959d43f539ed445bcb0f5fe5ff49f65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
-  highlight: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   bullet: {fileID: 1199338961713000, guid: fc07863af8d6f4cc9b2650f3317713fc, type: 2}
   barrelExit: Barrel End

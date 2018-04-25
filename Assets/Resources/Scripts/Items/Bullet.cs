@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	float speed;
-
 	void Start () {
-		speed = GlobalStore.now.Handgun_Bullet_Speed;
 		GetComponentInChildren<TrailRenderer> ().Clear ();
 	}
 

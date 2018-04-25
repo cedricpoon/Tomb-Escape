@@ -13,7 +13,8 @@ public class Mummy : Enemy
 		base.Init (
 			GlobalStore.now.Mummy_Life, 
 			GlobalStore.now.Mummy_Speed * scaleFactor,
-			GameObject.FindGameObjectWithTag ("Player")
+			GameObject.FindGameObjectWithTag ("Player"),
+			GlobalStore.now.Mummy_Damage
 		);
 
 		// Update scale
@@ -41,6 +42,8 @@ public class Mummy : Enemy
 	protected override void Attack ()
 	{
 		base._Animator.SetTrigger ("Attack");
+
+		Target.GetComponent<Health> ().Damage (Power);
 	}
 
 	public override void Damage ()

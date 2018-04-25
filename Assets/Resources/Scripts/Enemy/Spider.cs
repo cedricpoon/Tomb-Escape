@@ -19,7 +19,8 @@ public class Spider : Enemy
 		base.Init (
 			GlobalStore.now.Spider_Life, 
 			GlobalStore.now.Spider_Speed,
-			GameObject.FindGameObjectWithTag ("Player")
+			GameObject.FindGameObjectWithTag ("Player"),
+			GlobalStore.now.Spider_Damage
 		);
 		base.Start ();
 
@@ -74,7 +75,7 @@ public class Spider : Enemy
 
 	public override void Trace (GameObject target)
 	{
-		if (!isAttacking) {
+		if (!isAttacking && !_Animation.IsPlaying("death1")) {
 			base.Trace (target);
 			_Animation.Play ("run");
 		}
@@ -82,7 +83,7 @@ public class Spider : Enemy
 
 	public override void Flee ()
 	{
-		if (!isAttacking) {
+		if (!isAttacking && !_Animation.IsPlaying("death1")) {
 			base.Flee ();
 			_Animation.Play ("idle");
 		}
@@ -96,11 +97,11 @@ public class Spider : Enemy
 				continue;
 			else {
 				if (col.gameObject == Target) {
-					/* Damage Target */
+					Target.GetComponent<Health> ().Damage (Power);
 				}
 
 				col.GetComponent<Rigidbody>().AddExplosionForce (
-					Mathf.Pow(GlobalStore.now.Spider_Blast_Radius, 2f), 
+					GlobalStore.now.Spider_Blast_Radius * col.attachedRigidbody.mass, 
 					this.transform.position, 
 					GlobalStore.now.Spider_Blast_Radius,
 					0.5f,

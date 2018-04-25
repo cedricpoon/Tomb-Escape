@@ -17,5 +17,8 @@ https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-sk
 6. **Free Fantasy Spider** by Kalamona. 14 Dec. 2017. Unity Asset Store Terms of Service and EULA.
 https://assetstore.unity.com/packages/3d/characters/creatures/free-fantasy-spider-10104
 
-6. **Chibi Mummy** by Ricochet. 5 May. 2017. Unity Asset Store Terms of Service and EULA.
+7. **Chibi Mummy** by Ricochet. 5 May. 2017. Unity Asset Store Terms of Service and EULA.
 https://assetstore.unity.com/packages/3d/characters/chibi-mummy-60462
+
+8. **[PBR] Макаrov - Free Edition** by Bluesu. 13 Jan. 2016. Unity Asset Store Terms of Service and EULA.
+https://assetstore.unity.com/packages/3d/props/guns/pbr-rov-free-edition-53060
