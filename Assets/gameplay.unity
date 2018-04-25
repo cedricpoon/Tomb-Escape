@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &233316720
 AudioListener:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &233316724
 MonoBehaviour:
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53c47410aa1e84332b27a696a69d2f20, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801186266
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,8 +300,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17b1c59f781e84f6b90e8d2c6c08f47f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 1146693097}
   offset: {x: 10, y: 10, z: 10}
 --- !u!114 &801186272
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9e49fd95103e421eaaf53bd5bbca720, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 1146693098}
   _camera: {fileID: 801186270}
   hiddenObjects: []
@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0462a751bf0143ec929f255637fcc58, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 1
   sprintExtra: 1
   playerTag: Player
@@ -454,8 +454,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd813e9be99b462a92d74b522706fe4, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   renderSize: 7
   renderEvery: 5
   renderIfAvailable: 2
@@ -465,9 +465,9 @@ MonoBehaviour:
   - {fileID: 1325357115237744, guid: ac5c328a8c32b466884c24927c55f2f6, type: 2}
   eventProgress: 0
   eventRooms:
-  - {fileID: 1602440441757356, guid: ffc01179714e64679a7f1d2edf801a7f, type: 2}
-  - {fileID: 1156961917499378, guid: 259a79560aa624323bdf4ce990a23450, type: 2}
-  - {fileID: 1156961917499378, guid: 259a79560aa624323bdf4ce990a23450, type: 2}
+  - {fileID: 1430618795415288, guid: 29790af4215cd47da8ccf69dc4458b04, type: 2}
+  - {fileID: 1428423384887046, guid: 97c56bbedd00d492cb52617ead4e75be, type: 2}
+  - {fileID: 1428423384887046, guid: 97c56bbedd00d492cb52617ead4e75be, type: 2}
 --- !u!114 &887860422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,8 +477,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b7490d4ca6824f43b4c7c45c4ab8342, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Room: {fileID: 0}
   FloorLayerMask:
     serializedVersion: 2
@@ -530,7 +530,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: bd8c1448abb8a4d66b3f3256b4ff0eaf, type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 9100000, guid: 872c106018fa04d2a8ce209464c289c5, type: 2}
     - target: {fileID: 400038, guid: bd8c1448abb8a4d66b3f3256b4ff0eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -763,7 +763,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4670636804865848, guid: 869b52472f81645d9b691ae901185fe5, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 869b52472f81645d9b691ae901185fe5, type: 2}
