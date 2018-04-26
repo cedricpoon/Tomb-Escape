@@ -21,7 +21,7 @@ public class MobSpawner : MonoBehaviour {
 
 				newEnemy.transform.position = new Vector3 (
 					Random.Range (-spawnSize.x / 2, spawnSize.x / 2) + transform.position.x,
-					transform.Find ("WallBack").GetComponent<MeshRenderer> ().bounds.size.y / 2,
+					newEnemy.transform.position.y,
 					Random.Range (-spawnSize.z / 2, spawnSize.z / 2) + transform.position.z
 				);
 			}

@@ -23,6 +23,7 @@ public class GlobalStore
 	public int Inventory_Size_Bag;
 	public int Room_Mob_Number;
 	public int Room_Item_Number;
+	public int Room_Puzzle_Mobs;
 
 	// Item
 	public int Torch_Time;
@@ -64,6 +65,8 @@ public class GlobalStore
 			Inventory_Size_NoBag = 2;
 			Room_Mob_Number = 1;
 			Room_Item_Number = 1;
+			Room_Puzzle_Mobs = 8;
+
 
 			Skeleton_Life = 2;
 			Skeleton_Speed = 1;
