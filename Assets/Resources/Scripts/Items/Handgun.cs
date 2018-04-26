@@ -12,6 +12,8 @@ public class Handgun : Attachable {
 
 	int noOfBullets;
 
+	static bool FirstTime = true;
+
 	public override void Trigger ()
 	{
 		if (noOfBullets > 0) {
@@ -54,6 +56,24 @@ public class Handgun : Attachable {
 				base.Corrupt ("Out of Ammo");
 			}
 		}
+	}
+
+
+
+	public override void Attach ()
+	{
+		if (FirstTime) {
+			MessageBox.Show (
+				this, 
+				"Left Click to Fire with few Ammo", 
+				MessageBox.DURATION_SHORT, 
+				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f
+			);
+			FirstTime = false;
+		}
+
+
+		base.Attach ();
 	}
 
 	protected override void Start ()

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Axe : Attachable {
 
+	static bool FirstTime = true;
+
 	int limitation;
 
 	protected override void Start ()
@@ -25,6 +27,21 @@ public class Axe : Attachable {
 		Gizmos.color = Color.red;
 			//Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
 		Gizmos.DrawWireSphere (transform.position, GlobalStore.now.Axe_Attack_Range);
+	}
+
+	public override void Attach ()
+	{
+		if (FirstTime) {
+			MessageBox.Show (
+				this, 
+				"Left Click to Swing with Limited Times", 
+				MessageBox.DURATION_SHORT, 
+				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f
+			);
+			FirstTime = false;
+		}
+
+		base.Attach ();
 	}
 
 	public override void Trigger ()

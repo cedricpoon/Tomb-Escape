@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Enemy : Wrappable {
 
+	static bool FirstTime = true;
+
 	protected Animator _Animator { get; private set; }
 
 	protected Animation _Animation { get; private set; }
@@ -61,6 +63,16 @@ public abstract class Enemy : Wrappable {
 	}
 
 	public virtual void Trace (GameObject target) {
+		if (FirstTime) {
+			new MessageBox (
+				this,
+				"WTF is that?",
+				10,
+				GlobalStore.ON_SCREEN_LOWER_Y
+			).Show ();
+			FirstTime = false;
+		}
+
 		Move (Quaternion.LookRotation (
 			target.transform.position - transform.position
 		).eulerAngles);

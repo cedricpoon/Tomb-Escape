@@ -8,7 +8,7 @@ public class GlobalStore
 
 	public static bool IsFreePlayMode;
 
-	public const float ON_SCREEN_NOTICE_UPPER_Y = 100;
+	public const float ON_SCREEN_NOTICE_UPPER_Y = 100, ON_SCREEN_LOWER_Y = -100;
 
 	public enum LevelEnum { Easy, Hard }
 
@@ -66,7 +66,6 @@ public class GlobalStore
 			Room_Mob_Number = 1;
 			Room_Item_Number = 1;
 			Room_Puzzle_Mobs = 8;
-
 
 			Skeleton_Life = 2;
 			Skeleton_Speed = 1;
