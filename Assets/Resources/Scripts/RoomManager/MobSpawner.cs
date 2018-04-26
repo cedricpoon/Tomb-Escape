@@ -14,8 +14,10 @@ public class MobSpawner : MonoBehaviour {
 
 		if (ListOfMobs.Count > 0) {
 			for (int i = 0; i < noOfMobs; i++) {
+				int j = Random.Range (0, ListOfMobs.Count);
+				GameObject newEnemy = (GameObject)Instantiate (ListOfMobs [j]);
 
-				GameObject newEnemy = (GameObject)Instantiate (ListOfMobs [Random.Range (0, ListOfMobs.Count)]);
+				newEnemy.name = ListOfMobs [j].name;
 
 				Vector3 spawnSize = transform.Find ("Floor").GetComponent<MeshRenderer> ().bounds.size;
 

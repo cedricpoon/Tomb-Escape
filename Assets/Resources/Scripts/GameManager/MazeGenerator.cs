@@ -57,7 +57,7 @@ public class MazeGenerator : MonoBehaviour {
 					// Actual spawn of new room
 					GameObject nextRoomProto = hostileRooms [Random.Range (0, hostileRooms.Length)];
 					// if start of rendering and story proceeding
-					if (eventProgress < eventRooms.Length && i == renderSize - 1) {
+					if (eventProgress < eventRooms.Length && i == renderSize - 1 && !isFreePlayMode) {
 						nextRoomProto = eventRooms [eventProgress++];
 					}
 					GameObject room = SpawnRoomWithLoc (
