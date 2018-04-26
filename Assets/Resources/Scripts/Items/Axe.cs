@@ -16,7 +16,8 @@ public class Axe : Attachable {
 
 	protected override void Update ()
 	{
-		player.GetComponent<Animator> ().SetInteger ("AttackType", 2);
+		if (IsHeld)
+			player.GetComponent<Animator> ().SetInteger ("AttackType", 2);
 		base.Update ();
 	}
 
@@ -42,8 +43,7 @@ public class Axe : Attachable {
 			limitation--;
 
 			if (limitation == 0) {
-				base.Corrupt ();
-				MessageBox.Show (this, "Axe Damaged!", MessageBox.DURATION_SHORT, GlobalStore.ON_SCREEN_NOTICE_UPPER_Y);
+				base.Corrupt ("Broken");
 			}
 		}
 	}

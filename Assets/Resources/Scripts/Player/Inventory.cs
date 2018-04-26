@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour {
 				inventoryList [position] == null ? "[ Empty ]" : inventoryList [position].name, 
 				MessageBox.DURATION_SHORT, 
 				GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
-			).SetColor (new Color (0.5f, 0.5f, 0.5f));
+			);
 
 			// Lock scrolling for 0.2 seconds
 			mutex = true;

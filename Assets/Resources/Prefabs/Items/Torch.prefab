@@ -311,7 +311,7 @@ MonoBehaviour:
   BaseFlame: {fileID: 100008}
   Etincelles: {fileID: 100004}
   Fumee: {fileID: 100010}
-  MaxLightIntensity: 2
+  MaxLightIntensity: 0.8
   IntensityLight: 0.3
 --- !u!198 &19800000
 ParticleSystem:
@@ -14008,4 +14008,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wrapper: {fileID: 2100000, guid: 471cdb65d76e1409182faad2d40610dc, type: 2}
   handTag: Hand
+  TriggerLock: 1
   impact: {fileID: 8300000, guid: 055724a6cafae410e9a028005cdb999a, type: 3}

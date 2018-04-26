@@ -8,12 +8,7 @@ public class VisitStatus : MonoBehaviour {
 	private bool visited;
 	public bool IsVisited { get { return visited; } }
 
-	public void Checkout () {
+	public virtual void Checkout () {
 		visited = true;
-		OnVisit ();
-	}
-
-	public virtual void OnVisit () {
-		/* virtually abstracted to be overridden */
 	}
 }

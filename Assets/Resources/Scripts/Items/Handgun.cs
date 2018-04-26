@@ -52,7 +52,6 @@ public class Handgun : Attachable {
 
 			if (noOfBullets == 0) {
 				base.Corrupt ("Out of Ammo");
-				MessageBox.Show (this, "Out of Ammo!", MessageBox.DURATION_SHORT, GlobalStore.ON_SCREEN_NOTICE_UPPER_Y);
 			}
 		}
 	}
@@ -68,7 +67,8 @@ public class Handgun : Attachable {
 
 	protected override void Update ()
 	{
-		player.GetComponent<Animator> ().SetInteger ("AttackType", 1);
+		if (IsHeld)
+			player.GetComponent<Animator> ().SetInteger ("AttackType", 1);
 		base.Update ();
 	}
 }

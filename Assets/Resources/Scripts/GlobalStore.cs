@@ -21,6 +21,8 @@ public class GlobalStore
 	// Level informations
 	public int Inventory_Size_NoBag;
 	public int Inventory_Size_Bag;
+	public int Room_Mob_Number;
+	public int Room_Item_Number;
 
 	// Item
 	public int Torch_Time;
@@ -60,6 +62,8 @@ public class GlobalStore
 
 			Inventory_Size_Bag = 5;
 			Inventory_Size_NoBag = 2;
+			Room_Mob_Number = 1;
+			Room_Item_Number = 1;
 
 			Skeleton_Life = 2;
 			Skeleton_Speed = 1;

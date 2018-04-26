@@ -86,12 +86,12 @@ public class MessageBox
 
 	public void Dispose()
 	{
-		DisposeCoroutine(duration);
+		mono.StartCoroutine(DisposeCoroutine(duration));
 	}
 
 	public void DisposeNow()
 	{
-		DisposeCoroutine(0);
+		mono.StartCoroutine(DisposeCoroutine(0));
 	}
 
 	public MessageBox SetFadedEventHandler(OnFaded faded)
@@ -155,6 +155,7 @@ public class MessageBox
 			_rect.localPosition = new Vector3 (_rect.localPosition.x, i, 0);
 			yield return new WaitForSeconds (0.01f);
 		}
+
 		faded();
 	}
 
@@ -171,7 +172,7 @@ public class MessageBox
 				yield return new WaitForSeconds (0.01f);
 			}
 		} else {
-			for (float i = _from; i > _to; i -= 0.1f) {
+			for (float i = _from; i > _to - 0.1f; i -= 0.1f) {
 				_text.color = new Color (
 					_text.color.r,
 					_text.color.g,
@@ -194,13 +195,12 @@ public class MessageBox
 		mono.StartCoroutine(Fade(y + 5, y, Dispose));
 	}
 
-	void DisposeCoroutine(float duration)
+	IEnumerator DisposeCoroutine(float duration)
 	{
 		if (duration >= 0) {
-			new WaitForSecondsIEnum (duration, delegate(object[] objects) {
-				mono.StartCoroutine(FadeColor(1, 0));
-				mono.StartCoroutine (Fade (y, y - 5, Disposing));
-			}).Run (mono);
+			yield return new WaitForSeconds (duration);
+			mono.StartCoroutine(FadeColor(1, 0));
+			mono.StartCoroutine (Fade (y, y - 5, Disposing));
 		}
 	}
 

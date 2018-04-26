@@ -16,6 +16,14 @@ public class Potion : Attachable {
 		base.Trigger ();
 
 		player.GetComponent<Health> ().Heal ();
-		base.Corrupt ("Used");
+		base.Corrupt ("Empty");
+	}
+
+	protected override void Update ()
+	{
+		if (IsHeld)
+			player.GetComponent<Animator> ().SetInteger ("AttackType", 2);
+
+		base.Update ();
 	}
 }

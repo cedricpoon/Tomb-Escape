@@ -65,6 +65,13 @@ public class Attachable : Wrappable {
 	public void Corrupt (string name_append = "Damaged") {
 		corrupted = true;
 		name += " (" + name_append + ")";
+
+		MessageBox.Show (
+			player.GetComponent<Health>(), 
+			name_append + "!", 
+			MessageBox.DURATION_SHORT, 
+			GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
+		);
 	}
 		
 	public virtual void Trigger () { /* Not implemented */ }
