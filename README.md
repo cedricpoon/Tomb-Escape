@@ -1,7 +1,7 @@
 # Tomb Escape
 HKU COMP3329 Computer game design and programming Group 7 **Unity3D** Game Project
 ## Environment
-### OS
+### Operating System
 macOS High Sierra Version 10.13.4
 ### Unity
 v2017.3.1f1 Personal
