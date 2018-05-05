@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	[Range(1f, 10f)]
-	public float speed = 5f;
+	public float speed = 3f;
 
 	[Range(1f, 10f)]
-	public float sprint = 5.1f;
+	public float sprint = 5f;
 
 	public bool MoveLock;
 

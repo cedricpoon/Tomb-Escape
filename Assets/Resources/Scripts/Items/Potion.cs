@@ -17,7 +17,7 @@ public class Potion : Attachable {
 	{
 		if (FirstTime) {
 			MessageBox.Show (
-				this, 
+				GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>(), 
 				"Left Click to Heal", 
 				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f

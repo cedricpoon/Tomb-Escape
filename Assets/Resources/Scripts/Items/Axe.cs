@@ -33,7 +33,7 @@ public class Axe : Attachable {
 	{
 		if (FirstTime) {
 			MessageBox.Show (
-				this, 
+				GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>(), 
 				"Left Click to Swing with Limited Times", 
 				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f

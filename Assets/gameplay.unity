@@ -425,7 +425,7 @@ MonoBehaviour:
   eventProgress: 0
   eventRooms:
   - {fileID: 1300559230734596, guid: 219111812eda0463b9d0cbd6d9707f30, type: 2}
-  - {fileID: 1479483641840950, guid: 896cdfe281a6b458aa73f8c51dd038a2, type: 2}
+  - {fileID: 1582971269038250, guid: 896cdfe281a6b458aa73f8c51dd038a2, type: 2}
   - {fileID: 1730233876662460, guid: e099d377d54ed41c682aabbe71f251d8, type: 2}
 --- !u!114 &887860422
 MonoBehaviour:
@@ -493,6 +493,16 @@ Prefab:
     - target: {fileID: 4312570998700400, guid: 5e2a3ca614b7a47e29461e0e19e1ec75, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688895203082446, guid: 5e2a3ca614b7a47e29461e0e19e1ec75,
+        type: 2}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688895203082446, guid: 5e2a3ca614b7a47e29461e0e19e1ec75,
+        type: 2}
+      propertyPath: sprint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e2a3ca614b7a47e29461e0e19e1ec75, type: 2}

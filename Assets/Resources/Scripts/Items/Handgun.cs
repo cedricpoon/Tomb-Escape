@@ -64,7 +64,7 @@ public class Handgun : Attachable {
 	{
 		if (FirstTime) {
 			MessageBox.Show (
-				this, 
+				GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>(), 
 				"Left Click to Fire with few Ammo", 
 				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f

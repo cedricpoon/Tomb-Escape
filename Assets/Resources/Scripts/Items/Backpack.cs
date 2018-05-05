@@ -8,7 +8,7 @@ public class Backpack : Attachable
 		GameObject.FindGameObjectWithTag ("Player").GetComponent<Inventory> ().Enlarge ();
 
 		MessageBox.Show (
-			GameObject.FindGameObjectWithTag ("Player").GetComponent<Inventory> (),
+			GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>(),
 			"Your Inventory is now Expanded",
 			MessageBox.DURATION_SHORT,
 			GlobalStore.ON_SCREEN_NOTICE_UPPER_Y

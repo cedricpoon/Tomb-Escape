@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 114543309043865626}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,6 +1290,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wrapper: {fileID: 2100000, guid: 361bc7bc6c9f746d6a8f323f01783fa0, type: 2}
+  Attackable: 0
+  IsAttacking: 0
+  IsDamaging: 0
 --- !u!136 &136557993706120176
 CapsuleCollider:
   m_ObjectHideFlags: 1

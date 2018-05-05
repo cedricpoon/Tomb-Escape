@@ -54,7 +54,7 @@ public class Health : Wrappable
 		Life++;
 		new MessageBox (
 			this, 
-			"Health +1", 
+			"♥", 
 			MessageBox.DURATION_SHORT, 
 			GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
 		).SetColor (Color.green).Show ();
@@ -69,7 +69,7 @@ public class Health : Wrappable
 
 			new MessageBox (
 				this, 
-				"Health -1", 
+				"♡", 
 				MessageBox.DURATION_SHORT, 
 				GlobalStore.ON_SCREEN_NOTICE_UPPER_Y
 			).SetColor (Color.red).Show ();
