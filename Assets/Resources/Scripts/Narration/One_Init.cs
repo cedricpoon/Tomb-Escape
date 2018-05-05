@@ -10,18 +10,18 @@ public class One_Init : MonoBehaviour {
 		new MessageBox (
 			this,
 			"That bastard! Betrayed me and took all my stuff. Hope you die in the freaking trap!",
-			10,
-			GlobalStore.ON_SCREEN_LOWER_Y
-		).SetFadedEventHandler(delegate {
+			5,
+			GlobalStore.ON_SCREEN_LOWER_Y - 20
+		).SetFadedEventHandler (delegate {
 			
 			new MessageBox (
 				this,
 				"Calm down, Georgy. I should find him first and take my gears back.",
-				10,
-				GlobalStore.ON_SCREEN_LOWER_Y
-			).Show ();
+				5,
+				GlobalStore.ON_SCREEN_LOWER_Y - 20
+			).ShowInstantly();
 
-		}).Show ();
+		}).ShowInstantly ();
 
 	}
 	

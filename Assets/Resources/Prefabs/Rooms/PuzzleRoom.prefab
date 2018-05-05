@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4295667230372558}
   - component: {fileID: 114912797474957408}
-  - component: {fileID: 114150102792117284}
+  - component: {fileID: 114643014516935052}
   m_Layer: 0
   m_Name: PuzzleRoom
   m_TagString: Untagged
@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 33569620541399142}
   - component: {fileID: 23211974451367644}
   - component: {fileID: 65425492971529774}
+  - component: {fileID: 65292394418689558}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1419,6 +1420,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16, y: 1, z: 16}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65292394418689558
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989164837987634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16, y: 1, z: 16}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65315527940629860
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1663,21 +1676,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114150102792117284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849775029198248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8612e472dfbb42e9b06ff066edb851b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visited: 0
-  Memory: 00000000
-  ListOfMobs:
-  - {fileID: 1171742541041530, guid: 211bf0942028149cc860f88aa1e76d82, type: 2}
 --- !u!114 &114567554614668102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1696,6 +1694,18 @@ MonoBehaviour:
   Fumee: {fileID: 1100294017188224}
   MaxLightIntensity: 0.8
   IntensityLight: 0.3
+--- !u!114 &114643014516935052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849775029198248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df709efbc53d4632ae2a52fb4427f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visited: 0
 --- !u!114 &114794677825234292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,6 +1747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81c2254db92c41cca195b87fa7b6d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Memory: 00000000
+  ListOfMobs:
+  - {fileID: 1171742541041530, guid: 211bf0942028149cc860f88aa1e76d82, type: 2}
 --- !u!198 &198011710257526194
 ParticleSystem:
   m_ObjectHideFlags: 1

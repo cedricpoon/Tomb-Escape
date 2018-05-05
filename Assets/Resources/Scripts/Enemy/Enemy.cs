@@ -65,9 +65,9 @@ public abstract class Enemy : Wrappable {
 	public virtual void Trace (GameObject target) {
 		if (FirstTime) {
 			new MessageBox (
-				this,
+				GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>(),
 				"WTF is that?",
-				10,
+				5,
 				GlobalStore.ON_SCREEN_LOWER_Y
 			).Show ();
 			FirstTime = false;

@@ -27,6 +27,7 @@ public class MessageBox
 	RectTransform _rect;
 	OnFaded faded;
 	Color color = Color.white;
+	GameObject _gameObject;
 
 	public static void Show(MonoBehaviour mono)
 	{
@@ -107,7 +108,7 @@ public class MessageBox
 			present = this;
 
 		// Create canvas
-		GameObject canvas = new GameObject("MessageBox");
+		GameObject canvas = new GameObject("MessageBox(" + System.DateTime.Now.GetHashCode().ToString("X") + ")");
 		canvas.AddComponent<Canvas>();
 		canvas.AddComponent<CanvasScaler>();
 
@@ -133,13 +134,13 @@ public class MessageBox
 		// Blinding
 		this._text = text.GetComponent<Text>();
 		this._rect = text.GetComponent<RectTransform> ();
+		this._gameObject = canvas;
 	}
 
 	void Disposing()
 	{
-		GameObject msgBox = GameObject.Find("MessageBox");
-		if (msgBox != null)
-			Object.Destroy(msgBox);
+		if (_gameObject != null)
+			Object.Destroy(_gameObject);
 
 		// Update current object
 		present = null;

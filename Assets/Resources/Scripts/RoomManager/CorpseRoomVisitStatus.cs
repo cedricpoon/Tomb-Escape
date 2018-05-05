@@ -10,9 +10,9 @@ public class CorpseRoomVisitStatus : VisitStatus
 		new MessageBox (
 			this,
 			"Seems god wanted you dead too.",
-			10,
-			GlobalStore.ON_SCREEN_LOWER_Y
-		).Show ();
+			5,
+			GlobalStore.ON_SCREEN_LOWER_Y - 20
+		).ShowInstantly ();
 	}
 }
 
