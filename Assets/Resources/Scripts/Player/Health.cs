@@ -37,6 +37,16 @@ public class Health : Wrappable
 			IsDead = true;
 			_Animator.SetTrigger ("Death");
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+
+			new MessageBox (
+				this,
+				"You are Dead!",
+				MessageBox.DURATION_LONG,
+				GlobalStore.ON_SCREEN_LOWER_Y
+			).SetColor(Color.red).SetFadedEventHandler(delegate() {
+
+				Time.timeScale = 0;
+			}).Show();
 		}
 	}
 

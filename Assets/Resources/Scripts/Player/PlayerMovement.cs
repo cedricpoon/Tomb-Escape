@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 5f;
 
 	[Range(1f, 10f)]
-	public float sprint = 8f;
+	public float sprint = 5.1f;
 
 	public bool MoveLock;
 

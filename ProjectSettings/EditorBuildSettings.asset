@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/SimplyMenu.unity
     guid: 4164a4b6071104736a7efd471592bd77
   - enabled: 1
-    path: Assets/gameplay.unity
+    path: Assets/Gameplay.unity
     guid: ff402d00314384d0dbb5ecfbbeef0973

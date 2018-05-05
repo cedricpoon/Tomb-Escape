@@ -426,7 +426,7 @@ MonoBehaviour:
   eventRooms:
   - {fileID: 1300559230734596, guid: 219111812eda0463b9d0cbd6d9707f30, type: 2}
   - {fileID: 1479483641840950, guid: 896cdfe281a6b458aa73f8c51dd038a2, type: 2}
-  - {fileID: 1593332663438602, guid: e099d377d54ed41c682aabbe71f251d8, type: 2}
+  - {fileID: 1730233876662460, guid: e099d377d54ed41c682aabbe71f251d8, type: 2}
 --- !u!114 &887860422
 MonoBehaviour:
   m_ObjectHideFlags: 0

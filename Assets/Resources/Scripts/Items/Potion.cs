@@ -19,7 +19,7 @@ public class Potion : Attachable {
 			MessageBox.Show (
 				this, 
 				"Left Click to Heal", 
-				MessageBox.DURATION_SHORT, 
+				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f
 			);
 			FirstTime = false;

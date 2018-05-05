@@ -6,6 +6,8 @@ public class MobSpawner : MonoBehaviour {
 
 	public int noOfMobs;
 
+	protected float Offset;
+
 	public List<GameObject> ListOfMobs;
 
 	// Use this for initialization
@@ -23,7 +25,7 @@ public class MobSpawner : MonoBehaviour {
 
 				newEnemy.transform.position = new Vector3 (
 					Random.Range (-spawnSize.x / 2, spawnSize.x / 2) + transform.position.x,
-					newEnemy.transform.position.y,
+					newEnemy.transform.position.y + Offset,
 					Random.Range (-spawnSize.z / 2, spawnSize.z / 2) + transform.position.z
 				);
 			}

@@ -61,8 +61,8 @@ public class GlobalStore
 			Player_Life = 3;
 			Player_Invincible_Time = 1.5f;
 
-			Inventory_Size_Bag = 5;
-			Inventory_Size_NoBag = 2;
+			Inventory_Size_Bag = 6;
+			Inventory_Size_NoBag = 3;
 			Room_Mob_Number = 1;
 			Room_Item_Number = 1;
 			Room_Puzzle_Mobs = 8;
@@ -83,8 +83,8 @@ public class GlobalStore
 
 			Torch_Time = 40;
 
-			Handgun_Bullet_Amount = 5;
-			Handgun_Bullet_Speed = 100f;
+			Handgun_Bullet_Amount = 8;
+			Handgun_Bullet_Speed = 50f;
 
 			Axe_Usage_Limit = 20;
 			Axe_Attack_Range = 0.8f;

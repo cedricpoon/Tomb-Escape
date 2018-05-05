@@ -35,7 +35,7 @@ public class Axe : Attachable {
 			MessageBox.Show (
 				this, 
 				"Left Click to Swing with Limited Times", 
-				MessageBox.DURATION_SHORT, 
+				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f
 			);
 			FirstTime = false;

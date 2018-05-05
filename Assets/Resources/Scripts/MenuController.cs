@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour {
 	void Update () {
 		if (Input.anyKeyDown) {
 			Debug.Log ("Entered");
-			SceneManager.LoadScene ("gameplay");
+			SceneManager.LoadScene ("Gameplay");
 		}
 	}
 }

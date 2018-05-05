@@ -22,9 +22,9 @@ public class Handgun : Attachable {
 			/* Shoot bullets */
 			GameObject _bullet = Instantiate<GameObject> (bullet);
 			// From ground
-			_bullet.transform.position = new Vector3 (
+			_bullet.transform.localPosition = new Vector3 (
 				transform.Find(barrelExit).position.x,
-				0.2f,
+				0.5f,
 				transform.Find(barrelExit).position.z
 			);
 			_bullet.transform.rotation = this.transform.root.rotation;
@@ -66,7 +66,7 @@ public class Handgun : Attachable {
 			MessageBox.Show (
 				this, 
 				"Left Click to Fire with few Ammo", 
-				MessageBox.DURATION_SHORT, 
+				MessageBox.DURATION_LONG, 
 				GlobalStore.ON_SCREEN_LOWER_Y * 0.8f
 			);
 			FirstTime = false;

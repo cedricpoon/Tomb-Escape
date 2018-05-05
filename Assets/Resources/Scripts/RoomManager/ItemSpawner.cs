@@ -11,6 +11,7 @@ public class ItemSpawner : MobSpawner
 	{
 		noOfMobs = GlobalStore.now.Room_Item_Number;
 		ListOfMobs = ListOfItems;
+		Offset = 10;
 
 		base.Start ();
 	}

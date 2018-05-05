@@ -6,18 +6,12 @@ public class ExitVisitStatus : VisitStatus
 {
 	public override void Checkout ()
 	{
-		Time.timeScale = 0;
 		new MessageBox (
 			this,
-			"Thanks God! Finally a way out!",
-			10,
-			GlobalStore.ON_SCREEN_LOWER_Y
-		).SetFadedEventHandler(delegate() {
-
-			/* Win */
-			SceneManager.LoadScene ("SimplyMenu");
-
-		}).Show ();
+			"An escape rope! Finally find a way out!",
+			5,
+			GlobalStore.ON_SCREEN_LOWER_Y - 20
+		).ShowInstantly ();
 
 		base.Checkout ();
 	}

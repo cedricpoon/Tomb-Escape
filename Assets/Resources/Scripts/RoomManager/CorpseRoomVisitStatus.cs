@@ -12,7 +12,14 @@ public class CorpseRoomVisitStatus : VisitStatus
 			"Seems god wanted you dead too.",
 			5,
 			GlobalStore.ON_SCREEN_LOWER_Y - 20
-		).ShowInstantly ();
+		).SetFadedEventHandler(delegate() {
+			new MessageBox (
+				this,
+				"My bag and my items are back!",
+				5,
+				GlobalStore.ON_SCREEN_LOWER_Y - 20
+			).ShowInstantly();
+		}).ShowInstantly ();
 	}
 }
 

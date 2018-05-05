@@ -20,7 +20,7 @@ public class Torch : Attachable {
 			yield return new WaitForSeconds (1f);
 		}
 		GetComponent<Torchelight> ().IntensityLight = 0;
-		base.Corrupt ();
+		base.Corrupt ("No Fuel");
 	}
 
 	public override void Attach ()
