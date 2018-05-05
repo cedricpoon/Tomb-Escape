@@ -1,9 +1,12 @@
 # Tomb Escape
 HKU COMP3329 Computer game design and programming Group 7 **Unity3D** Game Project
-## Dashboard
-The dashboard that includes all features and to-do list of Tomb Escape.
-### Portal
-> https://j.mp/TombEscapeDashboard
+## Environment
+### OS
+macOS High Sierra Version 10.13.4
+### Unity
+v2017.3.1f1 Personal
+## How-to Run
+Open main menu via [SimplyMenu.unity](/Assets/SimplyMenu.unity)
 ## Acknowledgement
 Click [here](/CREDIT.md) for the list of open source libraries Tomb Escape used.
 ## License
