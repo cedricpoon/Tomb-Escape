@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Health : Wrappable
@@ -45,7 +46,8 @@ public class Health : Wrappable
 				GlobalStore.ON_SCREEN_LOWER_Y
 			).SetColor(Color.red).SetFadedEventHandler(delegate() {
 
-				Time.timeScale = 0;
+				SceneManager.LoadScene("SimplyMenu");
+
 			}).Show();
 		}
 	}

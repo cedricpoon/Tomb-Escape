@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Rope : Attachable
@@ -22,6 +23,7 @@ public class Rope : Attachable
 
 		).SetColor(Color.green).SetFadedEventHandler(delegate() {
 
+			SceneManager.LoadScene("SimplyMenu");
 		}).Show ();
 	}
 }
